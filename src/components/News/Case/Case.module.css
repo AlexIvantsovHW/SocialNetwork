@@ -1,0 +1,21 @@
+.Container{
+    width: 1000px;
+    height: 100px;
+    background-color: rgba(209, 210, 210, 0.681);
+    margin-top:5px
+}
+
+.Container:hover{
+    background-color:rgba(181, 184, 184, 0.681);
+}
+
+.News{
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.description{
+    margin-left: 20px;
+    font-size: 15px;
+}

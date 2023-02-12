@@ -1,0 +1,28 @@
+.container{
+ width: 100%;
+ height: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.element{
+grid-area: 'b';
+width: fit-content;
+height: fit-content;
+}
+
+.avatar{
+    width: 30px;
+    height:30px;
+    background-color:rgba(209, 210, 210, 0.681);
+    border: solid gray;
+    border-radius: 30px;
+}
+
+.avatar:hover{
+    background-color: rgba(181, 184, 184, 0.681);
+}
+
+.nameUser{
+
+}

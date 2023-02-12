@@ -1,0 +1,33 @@
+.container{
+    display: grid;
+    grid-template-columns: 200px 500px;
+    margin-right: 1100px;
+}
+
+.containerText{
+    grid-area: 'text';
+    height: 30px;
+    width: 500px;
+}
+
+.text{
+    
+}
+
+
+
+
+.containerUser{
+    grid-area: 'user';
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    width:150px;
+}
+.user{
+  
+}
+.img{
+    width: 30px;
+    height: 30px;
+}
