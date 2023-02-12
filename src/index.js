@@ -1,13 +1,14 @@
+import store from './redux/redux-store'
 import React from "react";
 import './index.css';
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import store from './redux/state'
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 let rerenderEntireTree=(state)=>{ 
-  
   root.render(
   
   
@@ -22,4 +23,6 @@ let rerenderEntireTree=(state)=>{
   );
 }
 rerenderEntireTree(store.getState());
-store.subscribe(rerenderEntireTree);
+store.subscribe(()=>{
+  let state=store.getState();
+  rerenderEntireTree(state)});

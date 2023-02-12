@@ -3,15 +3,13 @@ const UPC='UPDATE-POST-CHANGE';
 const ADD_MESSAGE='ADD-MESSAGE';
 
 let initialAction={
-    profilePage: {
         userList: [
           { id: 1, name: "Alex", message: "Hey man!" },
           { id: 2, name: "Inna", message: "Hey man!" },
           { id: 3, name: "Alina", message: "Hey man!" },
           { id: 4, name: "Jastin", message: "Hey man!" },
         ],
-        newPostText: "New post.... write there",},
-}
+        newPostText: "New post.... write there",}
 
 
 const profileReducer=(state=initialAction,action)=>{

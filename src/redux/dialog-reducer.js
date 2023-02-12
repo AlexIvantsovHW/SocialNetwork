@@ -2,7 +2,6 @@ const UP_MessageNewBody='UP_MessageNewBody';
 const SEND_MESSAGE='SEND_MESSAGE';
 
 let initialAction={
-    dialogPage:{
         messageList: [
           { name: "Alex", post: "how are you?" },
           { name: "Inna", post: "fine" },
@@ -10,7 +9,7 @@ let initialAction={
           { name: "Jastin", post: "and u?" },
         ],
         newMessageBody:'',
-}}
+}
 
 const dialogReducer=(state=initialAction,action)=>{
     switch (action.type){
