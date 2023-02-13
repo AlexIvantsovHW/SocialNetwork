@@ -1,17 +1,14 @@
 import { React } from "react";
 import Logo from '../Logo/Logo';
 import Ava from '../Avatar/Avatar';
-
-import NewPost from '../NewPost/NewPost';
+import NewPostContainer from '../NewPost/NewPostContainer';
 
 const MyProfile = (props) => {
   return (
     <div>
       <Logo />
       <Ava />
-      <NewPost 
-      dispatch={props.dispatch}
-      />
+      <NewPostContainer dispatch={props.dispatch}/>
     </div>
   );
 };

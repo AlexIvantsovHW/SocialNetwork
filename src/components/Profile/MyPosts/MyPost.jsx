@@ -1,15 +1,12 @@
 import User from "./Post/User";
 import React from "react";
-import Text from './Post/PostText'
 import s from './Post/s.module.css'
 
 const MyPosts = (props) => {
 
-  debugger;
-  let userElement = props.state.profilePage.userList.map((el) => (
+  let userElement = props.userElement.userList.map((el) => (
     <User name={el.name} message={el.message}/>
   ));
-
 
   return (
     <div className={s.container}>
