@@ -12,15 +12,22 @@ let initialAction={
 }
 
 const dialogReducer=(state=initialAction,action)=>{
+
+
     switch (action.type){
         case UP_MessageNewBody:
-            state.newMessageBody=action.body;
-            return state;
-        case SEND_MESSAGE:
+            return{
+            ...state,
+            newMessageBody:action.body}
+
+        case SEND_MESSAGE:{
             let body=state.newMessageBody;
-            state.newMessageBody='';
-            state.messageList.push({ name: "Alex", post: body });
-            return state;            
+            return{
+                ...state,
+                messageList:[...state.messageList,{ name: "Alex", post:body }],
+                newMessageBody:''
+            }    
+        }        
             default: return state;
         }
 }

@@ -6,9 +6,11 @@ const NewPost = (props) => {
   let newPostElement = React.createRef();
 
 
-  let onPostChange = () => {
-    let text = newPostElement.current.value;
-    props.UpdatePostChangeActionCreator(text);
+
+
+  let onPostChange = (e) => {
+    let text=e.target.value;
+    props.onPostChange(text);
   };
 
   return (
@@ -17,7 +19,6 @@ const NewPost = (props) => {
         <p>My POSTS</p>
         <textarea
           onChange={onPostChange}
-          ref={newPostElement}
           value={props.postChange}
         />
         <div>

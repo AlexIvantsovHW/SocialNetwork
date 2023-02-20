@@ -3,12 +3,13 @@ import Logo from '../Logo/Logo';
 import Ava from '../Avatar/Avatar';
 import NewPostContainer from '../NewPost/NewPostContainer';
 
-const MyProfile = (props) => {
+const MyProfile = () => {
+
   return (
     <div>
       <Logo />
       <Ava />
-      <NewPostContainer dispatch={props.dispatch}/>
+      <NewPostContainer/>
     </div>
   );
 };

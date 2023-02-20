@@ -1,11 +1,8 @@
 import React from "react";
 import Nav_class from "./../Nav/Nav.module.css";
 import { Link } from "react-router-dom";
-import NavProfile from './../Profile/Friends/NavProfile';
 
-
-
-const Nav = (props) => {
+const Nav = () => {
   return (
     <nav className={Nav_class.nav}>
       <div>
@@ -22,11 +19,8 @@ const Nav = (props) => {
       </div>
       <div>
         <Link to="/settings">Settings</Link>
-      </div>  
-      <div className={Nav_class.friend_bar}>
-        <p>FRIENDS</p>
-        <NavProfile state={props.state}/>
       </div>
+      <div className={Nav_class.friend_bar}></div>
     </nav>
   );
 };

@@ -2,11 +2,11 @@ import React from "react";
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import PostContainer from './MyPosts/PostContainer';
 
-const Profile = (props) => {
+const Profile = () => {
   return (
     <div>
-      <ProfileInfo dispatch={props.dispatch}/>
-      <PostContainer store={props.store}/>
+      <ProfileInfo />
+      <PostContainer/>
     </div>
   );
 };

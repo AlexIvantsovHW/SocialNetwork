@@ -13,21 +13,21 @@ let initialAction={
 
 
 const profileReducer=(state=initialAction,action)=>{
-    switch(action.type){
-        case ADD_POST:
-            let newPost = {id: 5,name: "Grigory",message: postMessage,};
-            state.userList.push(newPost);
-            state.newPostText = "";     
-            return state;
+    let stateCopy={...state, userList:[...state.userList]}; 
+    
 
-        case ADD_MESSAGE:
-            let text = {name: "Grigory",post: state.newPostText};
-            state.messageList.push(text);
-            return state;      
+    
+        switch(action.type){
+        case ADD_POST:
+            let newPost = {id: 5,name: "Grigory",message:state.newPostText,};
+            stateCopy.userList.push(newPost);
+            stateCopy.newPostText = "";     
+            return stateCopy;
 
         case UPC:
-            state.newPostText=action.newText;
-            return state;  
+            stateCopy.newPostText=action.newText;
+            return stateCopy;
+    
         default: return state;
         }
     }

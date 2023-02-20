@@ -8,15 +8,16 @@ import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import MessageContainer from "./components/Dialog/MessageContainer";
 
+
 const App = (props) => {
   return (
     <div className="app-wrapper">
       <Header />
-      <Nav state={props.state} />
+      <Nav />
       <div className="app-wrapper-content">
         <Routes>
-          <Route path="/profile" element={<Profile store={props.store} dispatch={props.dispatch} />} />
-          <Route exact path="/dialog" element={<MessageContainer store={props.store} dispatch={props.dispatch}/>}/>
+          <Route path="/profile" element={<Profile />} />
+          <Route exact path="/dialog" element={<MessageContainer />} />
           <Route path="/music" element={<Music />} />
           <Route path="/news" element={<News />} />
         </Routes>
