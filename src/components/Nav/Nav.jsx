@@ -3,6 +3,7 @@ import Nav_class from "./../Nav/Nav.module.css";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
+
   return (
     <nav className={Nav_class.nav}>
       <div>
@@ -10,6 +11,9 @@ const Nav = () => {
       </div>
       <div>
         <Link to="/dialog">Messages</Link>
+      </div>
+      <div>
+        <Link to="/users">Users</Link>
       </div>
       <div>
         <Link to="/news">News</Link>
