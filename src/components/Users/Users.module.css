@@ -1,0 +1,59 @@
+.top{
+    display: grid;
+    grid-template-columns: 0.3fr 3fr 1fr;
+    width: calc(90%);
+    font-size: 20px;
+    text-align: center;
+    margin: 0 50px 40px 20px;
+    font-weight: bold;
+
+}
+.container{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.3fr 3fr 1fr;
+    width: calc(90%);
+    margin: 0 50px 0 20px;
+    height: 200px;
+}
+
+.ava{
+
+    display: flex;
+    justify-content: center;
+        width: 100px;
+        height: 130px;
+    border: solid gray 0.4px;
+
+}
+.name{
+    text-align: center;
+    grid-area:'name';
+    display: grid;
+    width: 100px;
+    height: 20px;
+}
+
+.status{
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 132px;
+    background-color: rgba(128, 128, 128, 0.222);
+}
+
+.location{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 130px;
+    
+}
+
+.button{
+    margin: 5px 0px 0px 10px;
+
+}
+
