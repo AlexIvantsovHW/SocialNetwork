@@ -21,9 +21,8 @@
 
     display: flex;
     justify-content: center;
-        width: 100px;
-        height: 130px;
-    border: solid gray 0.4px;
+        width: 90px;
+        height: 90px;
 
 }
 .name{
@@ -57,3 +56,11 @@
 
 }
 
+.activePage{
+cursor: pointer;
+}
+
+
+.activePage:hover{
+    font-weight: bold;
+}
