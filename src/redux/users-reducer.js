@@ -2,6 +2,7 @@ const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SETUSERS = "SET-USERS";
 const ACTIVE_PAGE='ACTIVE_PAGE';
+const LOADING_DATA='LOADING_DATA';
 
 
   let initialAction ={
@@ -9,6 +10,7 @@ const ACTIVE_PAGE='ACTIVE_PAGE';
         pageSize:50,
         totalUsers:1000,
         currentPage:[3],
+        loadingData:false,
     
 };
 
@@ -37,6 +39,9 @@ const usersReducer = (state = initialAction, action) => {
     
     case ACTIVE_PAGE:
         return {...state,currentPage:action.currentPage}; 
+
+    case LOADING_DATA:
+      return {...state,loadingData:action.loadingData};  
     default:
             return state;
     }
@@ -45,8 +50,8 @@ const usersReducer = (state = initialAction, action) => {
 export const followAC = (id) => {return { type: FOLLOW, userId: id };};
 export const unfollowAC = (id) => {return { type: UNFOLLOW, userId: id };};
 export const setUsersAC = (users) => {return { type: SETUSERS, users:users };};
-export const activePageAC=(page)=>{ return {type:ACTIVE_PAGE,currentPage:page}}
-
+export const activePageAC=(page)=>{ return {type:ACTIVE_PAGE,currentPage:page}};
+export const loadingDataAC=(loadingData)=>{return {type:LOADING_DATA,loadingData:loadingData}};
 
 
 
