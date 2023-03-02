@@ -1,39 +1,34 @@
 import Users from "./Users";
 import { connect } from "react-redux";
 import {
-  followAC,
-  unfollowAC,
-  setUsersAC,
-  activePageAC,
-  loadingDataAC
+  follow,
+  unfollow,
+  setUsers,
+  activePage,
+  loader
 } from "./../../redux/users-reducer";
 import axios from "axios";
-import  { Component } from "react";
 import React from "react";
 import Preloader from './Preloader/Preloader'
+import API from "../../API";
 
 class UsersAPIcomponent extends React.Component {
   componentDidMount() {
+    debugger;
     this.props.loader(true);
-    axios
-      .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`
-      )
-      .then((response) => {
-        this.props.SetUsers(response.data.items);
-        this.props.loader(false);
-      });
+    API.getUsers(this.props.currentPage,this.props.pageSize)
+    .then((data) => {
+      this.props.setUsers(data.items);
+      this.props.loader(false);})
   }
 
   onPostChange = (p) => {
+    debugger;
     this.props.activePage(p);
     this.props.loader(true);
-    axios
-      .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`
-      )
-      .then((response) => {
-        this.props.SetUsers(response.data.items);
+      API.getUsers(p,this.props.pageSize)
+      .then((data) => {
+        this.props.setUsers(data.items);
         this.props.loader(false);
 
       });
@@ -47,6 +42,8 @@ class UsersAPIcomponent extends React.Component {
         pageSize={this.props.pageSize}
         UserPage={this.props.UserPage}
         onPostChange={this.onPostChange}
+        follow={this.props.follow}
+        unfollow={this.props.unfollow}
       />
       </>
       
@@ -64,28 +61,7 @@ let mapToStateProps = (state) => {
 
   };
 };
-let mapToDispatch = (dispatch) => {
-  return {
-    Follow: (id) => {
-      dispatch(followAC(id));
-    },
-    Unfollow: (id) => {
-      dispatch(unfollowAC(id));
-    },
-    SetUsers: (users) => {
-      dispatch(setUsersAC(users));
-    },
-    activePage: (page) => {
-      dispatch(activePageAC(page));
-    },
-    loader:(loadingData)=>{
-    dispatch(loadingDataAC(loadingData))},
-  };
-};
 
-const UsersContainer = connect(
-  mapToStateProps,
-  mapToDispatch
-)(UsersAPIcomponent);
+const UsersContainer = connect(mapToStateProps,{follow,unfollow:unfollow,setUsers,activePage,loader})(UsersAPIcomponent);
 
 export default UsersContainer;

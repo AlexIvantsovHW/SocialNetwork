@@ -1,12 +1,69 @@
-.header{
+.container{
     grid-area: h;
-    background-color: rgba(101, 101, 175, 0.587);
-    position: relative;
-  
+    position: fixed;
+    background-color: rgb(150, 150, 188);
+    width: 100%;
+    height:150px;
+    z-index: 20;
+    
+  }
+
+  .sub_container{
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 0.5fr;
+    height:150px;
+
+  }
+  .header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .header img{
-    position: fixed;
+
     width: 50px;
-    margin-left: 2%;
-    margin-top: 2%;
   }
+  .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sub_right{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login{  
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   height: fit-content;
+   height: 20px;
+}
+  .login p{
+    color: white;
+    font-size: 15px;
+
+  }
+
+  .email{  
+     display: flex;
+    justify-content: center;
+    height: fit-content;
+    align-items: center;
+    height: 15px;
+    padding-top: 5px;
+}
+  .id{  
+     display: flex;
+    justify-content: center;
+    height: 15px;
+    align-items: center;
+    padding-top: 5px;
+}

@@ -2,11 +2,12 @@ import React from "react";
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import PostContainer from './MyPosts/PostContainer';
 
-const Profile = () => {
+const Profile = (props) => { 
+  debugger;
   return (
     <div>
-      <ProfileInfo />
-      <PostContainer/>
+      <ProfileInfo Profile={props.Profile}/>
+      <PostContainer />
     </div>
   );
 };

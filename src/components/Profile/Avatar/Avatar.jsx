@@ -1,11 +1,39 @@
 import React from "react";
-import Avatar from './Avatar.module.css';
+import s from "./Avatar.module.css";
 
-const Ava = () => {
+const Ava = (props) => {
+  debugger;
+  let anonimPhoto = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+  debugger;
   return (
-      <div className={Avatar.ava}>
-        <img src="https://imgv3.fotor.com/images/slider-image/A-clear-image-of-a-woman-wearing-red-sharpened-by-Fotors-image-sharpener.jpg"></img>
-      </div>
+    <div>
+      {props.Profile ===null ? (
+        <div>Undefined</div>
+      ) : (
+        <div className={s.container}>
+          <div className={s.ava}>
+            {props.Profile.photos.large === null ? (
+              <img src={anonimPhoto} />
+            ) : (
+              <img src={props.Profile.photos.large} />
+            )}
+          </div>
+          <div className={s.center}>
+            <div>{`About myself: ${
+              props.Profile.aboutMe === null ? "информация отсутствует" : props.Profile.aboutMe
+            }`}</div>
+            <div>{`Contact data: ${
+              props.Profile.contacts === null
+                ? "информация отсутствует"
+                : props.Profile.contacts.facebook
+            }`}</div>
+          </div>
+          <div className={s.right}>
+            <div>{`Работа: ${props.Profile.lookingForAJob?'В поиске':(props.Profile.lookingForAJobDescription===null?'информация отсутствует':props.Profile.lookingForAJobDescription)}`}</div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 

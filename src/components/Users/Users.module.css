@@ -26,11 +26,11 @@
 
 }
 .name{
-    text-align: center;
+    
     grid-area:'name';
     display: grid;
-    width: 100px;
-    height: 20px;
+    width: 200px;
+    height: 40px;
 }
 
 .status{
@@ -52,7 +52,7 @@
 }
 
 .button{
-    margin: 5px 0px 0px 10px;
+    margin: 10px 0px 0px 10px;
 
 }
 

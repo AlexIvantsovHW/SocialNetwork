@@ -1,8 +1,9 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import s from "./Users.module.css";
+import axios from "axios";
 
-
-const Users =(props)=> {
+const Users = (props) => {
   let anonimPhoto = "https://krirpo.ru/wp-content/uploads/2021/11/noname.png";
   let pagesCount = Math.ceil(props.totalUsers / props.pageSize);
   let dispayPages = [];
@@ -15,16 +16,29 @@ const Users =(props)=> {
       <div>
         <div className={s.container}>
           <div>
-            <img
-              src={el.photos.small === null ? anonimPhoto : el.photos.small}
-              className={s.ava}
-            />
-            <div className={s.name}>{el.name}</div>
+            <NavLink to={"/profile/" + el.id}>
+              <img
+                src={el.photos.small === null ? anonimPhoto : el.photos.small}
+                className={s.ava}
+              />
+            </NavLink>
+            <div className={s.name}>{`${el.name} id:${el.id}`}</div>
             {el.followed ? (
               <button
                 className={s.button}
                 onClick={() => {
-                  props.Follow(el.id);
+                  debugger;
+                  axios
+                    .post(
+                      `https://social-network.samuraijs.com/api/1.0/follow/${el.id}`,
+                      {},
+                      { withCredentials: true }
+                    )
+                    .then((response) => {
+                      
+                        props.follow(el.id);
+                      
+                    });
                 }}
               >
                 Unfollow
@@ -33,7 +47,13 @@ const Users =(props)=> {
               <button
                 className={s.button}
                 onClick={() => {
-                  props.Unfollow(el.id);
+                  debugger;
+                  axios.delete(
+                    `https://social-network.samuraijs.com/api/1.0/follow/${el.id}`,
+                    { withCredentials: true }
+                  );
+
+                  props.unfollow(el.id);
                 }}
               >
                 Follow
@@ -48,32 +68,31 @@ const Users =(props)=> {
     );
   });
 
-    return (
+  return (
+    <div>
       <div>
-        <div>
-          <div className={s.top}>
-            <div>USER</div>
-            <div>STATUS</div>
-            <div>LOCATION</div>
-          </div>
-
-          <div>
-            {dispayPages.map((p) => {
-              return (
-                <span
-                  onClick={(e) =>props.onPostChange(p)}
-                  className={s.activePage}
-                >
-                  {" "}
-                  {p}{" "}
-                </span>
-              );
-            })}
-          </div>
+        <div className={s.top}>
+          <div>USER</div>
+          <div>STATUS</div>
+          <div>LOCATION</div>
         </div>
-        {userElement}
-      </div>
-    );
 
-}
+        <div>
+          {dispayPages.map((p) => {
+            return (
+              <span
+                onClick={(e) => props.onPostChange(p)}
+                className={s.activePage}
+              >
+                {" "}
+                {p}{" "}
+              </span>
+            );
+          })}
+        </div>
+      </div>
+      {userElement}
+    </div>
+  );
+};
 export default Users;

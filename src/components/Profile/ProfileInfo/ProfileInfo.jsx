@@ -3,13 +3,14 @@ import Logo from '../Logo/Logo';
 import Ava from '../Avatar/Avatar';
 import NewPostContainer from '../NewPost/NewPostContainer';
 
-const MyProfile = () => {
-
+const MyProfile = (props) => {
+  debugger;
   return (
+
     <div>
-      <Logo />
-      <Ava />
-      <NewPostContainer/>
+      <Logo Profile={props.Profile}/>
+      <Ava Profile={props.Profile}/>
+      <NewPostContainer />
     </div>
   );
 };

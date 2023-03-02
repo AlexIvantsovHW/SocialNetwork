@@ -1,12 +1,30 @@
 
+.container{
+  width: 80%;
+  margin-left: 90px;
+  background-color: rgba(151, 151, 151, 0.522);
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr;
+  height: 200px;
+}
 .ava{
-  margin-top: 20px;
-  margin-bottom: 20px;
-  left: 90px;
   position: relative;
+  border: solid gray 0.5px;
 }
 .ava img{
-  width: 210px;
-  height: 130px;
+  margin-top:10px;
+  margin-left:50px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
 }
+
+.center{
+  padding-top:10px;
+  border: solid gray 0.5px;
+}
+.right{
+  padding-top:10px;
+  border: solid gray 0.5px;
+}
+

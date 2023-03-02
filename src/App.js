@@ -1,24 +1,23 @@
 import "./App.css";
 import React from "react";
-import Header from "./components/Header/Header";
+import HeaderContainer from "./components/Header/HeaderContainer";
 import Nav from "./components/Nav/Nav";
-import Profile from "./components/Profile/Profile";
 import { Routes, Route } from "react-router-dom";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import MessageContainer from "./components/Dialog/MessageContainer";
 import UsersContainer from "./components/Users/UsersContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 
 const App = (props) => {
-  debugger;
   return (
     <div className="app-wrapper">
-      <Header />
+      <HeaderContainer />
       <Nav />
       <div className="app-wrapper-content">
         <Routes>
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/:id" element={<ProfileContainer />} />
           <Route exact path="/dialog" element={<MessageContainer />} />
           <Route path="/users" element={<UsersContainer />} />
           <Route path="/music" element={<Music />} />

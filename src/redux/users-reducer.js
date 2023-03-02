@@ -8,8 +8,8 @@ const LOADING_DATA='LOADING_DATA';
   let initialAction ={
         users:[],
         pageSize:50,
-        totalUsers:1000,
-        currentPage:[3],
+        totalUsers:2000,
+        currentPage:[1],
         loadingData:false,
     
 };
@@ -47,11 +47,11 @@ const usersReducer = (state = initialAction, action) => {
     }
   };
 
-export const followAC = (id) => {return { type: FOLLOW, userId: id };};
-export const unfollowAC = (id) => {return { type: UNFOLLOW, userId: id };};
-export const setUsersAC = (users) => {return { type: SETUSERS, users:users };};
-export const activePageAC=(page)=>{ return {type:ACTIVE_PAGE,currentPage:page}};
-export const loadingDataAC=(loadingData)=>{return {type:LOADING_DATA,loadingData:loadingData}};
+export const follow = (id) => {return { type: FOLLOW, userId: id };};
+export const unfollow = (id) => {return { type: UNFOLLOW, userId: id };};
+export const setUsers = (users) => {return { type: SETUSERS, users:users };};
+export const activePage=(page)=>{ return {type:ACTIVE_PAGE,currentPage:page}};
+export const loader=(loadingData)=>{return {type:LOADING_DATA,loadingData:loadingData}};
 
 
 

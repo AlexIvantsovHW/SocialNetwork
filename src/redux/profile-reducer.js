@@ -1,6 +1,8 @@
 const ADD_POST='ADD-POST';
 const UPC='UPDATE-POST-CHANGE';
 const ADD_MESSAGE='ADD-MESSAGE';
+const SET_PROFILE='SET_PROFILE';
+
 
 let initialAction={
         userList: [
@@ -9,7 +11,9 @@ let initialAction={
           { id: 3, name: "Alina", message: "Hey man!" },
           { id: 4, name: "Jastin", message: "Hey man!" },
         ],
-        newPostText: "New post.... write there",}
+        newPostText: "New post.... write there",
+        Profile:null,
+    }
 
 
 const profileReducer=(state=initialAction,action)=>{
@@ -27,6 +31,9 @@ const profileReducer=(state=initialAction,action)=>{
         case UPC:
             stateCopy.newPostText=action.newText;
             return stateCopy;
+        case SET_PROFILE:
+            debugger;
+            return {...state,Profile:action.Profile}
     
         default: return state;
         }
@@ -34,4 +41,6 @@ const profileReducer=(state=initialAction,action)=>{
 
 export const addPostActionCreator=()=>{return({type:ADD_POST})}
 export const UpdatePostChangeActionCreator=(text)=>{return({type:UPC,newText:text})}
+export const setProfile=(Profile)=>{debugger;return({type:SET_PROFILE,Profile})}
+
 export default profileReducer;
