@@ -13,6 +13,7 @@ const Users = (props) => {
 
   let userElement = props.UserPage.users.map((el) => {
     return (
+      
       <div>
         <div className={s.container}>
           <div>
@@ -27,7 +28,6 @@ const Users = (props) => {
               <button
                 className={s.button}
                 onClick={() => {
-                  debugger;
                   axios
                     .post(
                       `https://social-network.samuraijs.com/api/1.0/follow/${el.id}`,
@@ -47,7 +47,6 @@ const Users = (props) => {
               <button
                 className={s.button}
                 onClick={() => {
-                  debugger;
                   axios.delete(
                     `https://social-network.samuraijs.com/api/1.0/follow/${el.id}`,
                     { withCredentials: true }

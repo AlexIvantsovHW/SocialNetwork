@@ -32,7 +32,6 @@ const profileReducer=(state=initialAction,action)=>{
             stateCopy.newPostText=action.newText;
             return stateCopy;
         case SET_PROFILE:
-            debugger;
             return {...state,Profile:action.Profile}
     
         default: return state;
@@ -41,6 +40,6 @@ const profileReducer=(state=initialAction,action)=>{
 
 export const addPostActionCreator=()=>{return({type:ADD_POST})}
 export const UpdatePostChangeActionCreator=(text)=>{return({type:UPC,newText:text})}
-export const setProfile=(Profile)=>{debugger;return({type:SET_PROFILE,Profile})}
+export const setProfile=(Profile)=>{return({type:SET_PROFILE,Profile})}
 
 export default profileReducer;

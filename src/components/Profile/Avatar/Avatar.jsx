@@ -2,9 +2,7 @@ import React from "react";
 import s from "./Avatar.module.css";
 
 const Ava = (props) => {
-  debugger;
   let anonimPhoto = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
-  debugger;
   return (
     <div>
       {props.Profile ===null ? (

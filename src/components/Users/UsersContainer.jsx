@@ -18,6 +18,7 @@ class UsersAPIcomponent extends React.Component {
     this.props.loader(true);
     API.getUsers(this.props.currentPage,this.props.pageSize)
     .then((data) => {
+      debugger;
       this.props.setUsers(data.items);
       this.props.loader(false);})
   }
