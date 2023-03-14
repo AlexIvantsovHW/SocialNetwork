@@ -4,19 +4,22 @@
   padding-left: 10%;
   padding-top: 10%;
   grid-area: n;
-  background-color: rgba(101, 101, 175, 0.587);
-  color: white;
+  background-color: rgb(38, 38, 38);
 }
-
-.friend_bar{
-  margin-top: 100px;
-  margin-left: -10%;
-
-}
-.friend_bar p{
-  color: black;
-  text-align: center;
+.nav p{
+  font-size: 15px;
+  list-style: none;
+  text-decoration:none;
+  color:white;
   font-weight: bold;
+}
 
+p:hover{
+  color:rgba(4, 252, 194, 0.647);
+  transition: 400ms;
+}
+
+link{
+  text-decoration: none;
 }
 

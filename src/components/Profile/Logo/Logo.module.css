@@ -1,21 +1,60 @@
 
-.logo {
+
+.container {
   position: relative;
+background-image: url("logo.jpg");
+border-radius: 20px;
+background-size: 100%  120%;
+width: 90%;
+opacity: 90%;
+height: 250px;
+top:2%;
+left:5%;
 }
-.logo img{
-  padding: 0 5% ;
-  object-fit: cover;
-    width: 90%;
-    height: 250px;
-    position: relative;
-    z-index: 0;
+.container:hover{
+  opacity: 100%;
+   box-shadow: 0 0 15px 1px rgba(4, 252, 194, 0.647);
+   transition:600ms;
+   filter: brightness(80%)
+}
+
+
+.ava{
+  background-color: rgba(146, 242, 239, 0.17);
+  border: solid;
+  border-color: rgba(146, 242, 239, 0.359);
+  height: 80%;
+  width: 15%;
+  border-radius: 50%;
+}
+.ava:hover{
+  background-color: rgba(146, 242, 239, 0.323);
+  border-color: rgba(146, 242, 239, 0.574);
+}
+
+.ava img{
+  background-color: rgba(146, 242, 239, 0.17);
+  border: solid;
+  border-color: rgba(146, 242, 239, 0.359);
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
 }
 
 h1{
+  padding-left: 60%;
+  padding-top: 1%;
   position: absolute;
-  top:30%;
-  left:55%;
-  color: rgba(255, 255, 255, 0.542);
-  text-decoration: underline black;
+  font-size: 45px;
+  color: rgba(3, 105, 76, 0.919);
+  text-decoration: underline  rgba(3, 105, 76, 0.919);
 
+}
+
+textarea{
+  border-radius: 20px;
+  font-size: 20px;
+  height: 80px;
+  width: 100%;
+  margin-top: 0px;
 }

@@ -1,39 +1,22 @@
 import Users from "./Users";
 import { connect } from "react-redux";
 import {
-  follow,
-  unfollow,
-  setUsers,
-  activePage,
-  loader
+  followAccept,
+  unfollowAccept,
+  getUsersTC,
+  onPostChangeTC,
+  unfollowTC,
+  followTC
 } from "./../../redux/users-reducer";
-import axios from "axios";
 import React from "react";
 import Preloader from './Preloader/Preloader'
-import API from "../../API";
+
 
 class UsersAPIcomponent extends React.Component {
-  componentDidMount() {
-    debugger;
-    this.props.loader(true);
-    API.getUsers(this.props.currentPage,this.props.pageSize)
-    .then((data) => {
-      debugger;
-      this.props.setUsers(data.items);
-      this.props.loader(false);})
-  }
+  componentDidMount() {this.props.getUsersTC(this.props.currentPage,this.props.pageSize);}
 
-  onPostChange = (p) => {
-    debugger;
-    this.props.activePage(p);
-    this.props.loader(true);
-      API.getUsers(p,this.props.pageSize)
-      .then((data) => {
-        this.props.setUsers(data.items);
-        this.props.loader(false);
-
-      });
-  };
+  onPostChange = (p) => {this.props.onPostChangeTC(p,this.props.pageSize)}
+  
   render() {
     return (
       <>
@@ -43,11 +26,10 @@ class UsersAPIcomponent extends React.Component {
         pageSize={this.props.pageSize}
         UserPage={this.props.UserPage}
         onPostChange={this.onPostChange}
-        follow={this.props.follow}
-        unfollow={this.props.unfollow}
+        follow={this.props.followAccept}
+        unfollow={this.props.unfollowAccept}
       />
       </>
-      
     );
   }
 }
@@ -63,6 +45,8 @@ let mapToStateProps = (state) => {
   };
 };
 
-const UsersContainer = connect(mapToStateProps,{follow,unfollow:unfollow,setUsers,activePage,loader})(UsersAPIcomponent);
+const UsersContainer = connect(mapToStateProps,
+  {unfollowAccept,followAccept,getUsersTC,
+     onPostChangeTC,followTC,unfollowTC })(UsersAPIcomponent);
 
 export default UsersContainer;

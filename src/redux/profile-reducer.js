@@ -1,6 +1,7 @@
+import API from "../API";
+
 const ADD_POST='ADD-POST';
 const UPC='UPDATE-POST-CHANGE';
-const ADD_MESSAGE='ADD-MESSAGE';
 const SET_PROFILE='SET_PROFILE';
 
 
@@ -19,8 +20,6 @@ let initialAction={
 const profileReducer=(state=initialAction,action)=>{
     let stateCopy={...state, userList:[...state.userList]}; 
     
-
-    
         switch(action.type){
         case ADD_POST:
             let newPost = {id: 5,name: "Grigory",message:state.newPostText,};
@@ -28,11 +27,8 @@ const profileReducer=(state=initialAction,action)=>{
             stateCopy.newPostText = "";     
             return stateCopy;
 
-        case UPC:
-            stateCopy.newPostText=action.newText;
-            return stateCopy;
-        case SET_PROFILE:
-            return {...state,Profile:action.Profile}
+        case UPC: stateCopy.newPostText=action.newText;return stateCopy;
+        case SET_PROFILE:return {...state,Profile:action.Profile}
     
         default: return state;
         }
@@ -41,5 +37,7 @@ const profileReducer=(state=initialAction,action)=>{
 export const addPostActionCreator=()=>{return({type:ADD_POST})}
 export const UpdatePostChangeActionCreator=(text)=>{return({type:UPC,newText:text})}
 export const setProfile=(Profile)=>{return({type:SET_PROFILE,Profile})}
+export const profileTC=(id)=>{return (dispatch)=>{API.getProfile(id).then((data) => dispatch(setProfile(data)));}}
+
 
 export default profileReducer;

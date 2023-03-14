@@ -1,22 +1,23 @@
 import React from "react";
-import logo_class from "./Logo.module.css";
+import s from '../Logo/Logo.module.css'
 
 const Logo = (props) => {
-debugger;
-
-  let logotip =
-    "https://images.ctfassets.net/hrltx12pl8hq/7yQR5uJhwEkRfjwMFJ7bUK/dc52a0913e8ff8b5c276177890eb0129/offset_comp_772626-opt.jpg?fit=fill&w=800&h=300";
-  
-  let baseName='EpcikRaven';
   debugger;
-    return (
+  let anonimPhoto = "https://cdn-icons-png.flaticon.com/512/1177/1177568.png";
+  let Unknown='Unknown'
+  return (
+      <div className={s.container}>
+        <h1>{(props.Profile&&props.Profile.fullName)!= null ? (props.Profile.fullName): Unknown }
+   </h1>
+        <div className={s.ava}>         
+        {(props.Profile&&props.Profile.photos.large)!= null ? 
+        (<img src={props.Profile.photos.large} />): (<img src={anonimPhoto} />) }
+   
+   </div>
     
-  <div className={logo_class.logo}>
-      <img src={logotip}/>
-        <h1>{(props.Profile===null?baseName:props.Profile.fullName)}</h1>
-     
-    </div>
-  );
+      </div>
+
+  )
 };
 
 export default Logo;

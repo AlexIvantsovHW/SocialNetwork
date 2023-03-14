@@ -1,3 +1,5 @@
+import API from "../API";
+
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SETUSERS = "SET-USERS";
@@ -47,11 +49,38 @@ const usersReducer = (state = initialAction, action) => {
     }
   };
 
-export const follow = (id) => {return { type: FOLLOW, userId: id };};
-export const unfollow = (id) => {return { type: UNFOLLOW, userId: id };};
+export const followAccept = (id) => {return { type: FOLLOW, userId: id };};
+export const unfollowAccept = (id) => {return { type: UNFOLLOW, userId: id };};
 export const setUsers = (users) => {return { type: SETUSERS, users:users };};
 export const activePage=(page)=>{ return {type:ACTIVE_PAGE,currentPage:page}};
 export const loader=(loadingData)=>{return {type:LOADING_DATA,loadingData:loadingData}};
+
+
+export const getUsersTC=(currentPage,pageSize)=>{
+  return (dispatch)=>{
+      dispatch(loader(true));
+      API.getUsers(currentPage,pageSize).then((data) => {
+      dispatch(setUsers(data.items));
+      dispatch(loader(false));})
+  }
+  }
+
+export const onPostChangeTC=(p,pageSize)=>{
+  return (dispatch)=>{
+ dispatch(activePage(p));
+    dispatch(loader(true));
+      API.getUsers(p,pageSize)
+      .then((data) => {
+        dispatch(setUsers(data.items));
+        dispatch(loader(false));})
+  }
+}
+
+export const followTC=(userId)=>{return (dispatch)=>{API.getFollow(userId)}};
+export const unfollowTC=(id)=>{return (dispatch)=>{API.getUnfollow(id);}};
+
+
+
 
 
 

@@ -1,7 +1,11 @@
-.prof{
-    margin-left: 10px;
-    margin-bottom: 20px;
+.container{
+    display: grid;
+    margin-left: 5%;
+    width: 90%;
+    height: 220px;
+    border-bottom: solid gray;;
+    border-width: 0.5px;
     color:black;
     font-size: 20px;
-
+ 
 }

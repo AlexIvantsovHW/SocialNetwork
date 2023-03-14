@@ -1,30 +1,26 @@
-
+body{
+  background-color: rgb(38, 38, 38);
+}
 .container{
-  width: 80%;
-  margin-left: 90px;
-  background-color: rgba(151, 151, 151, 0.522);
+  margin-top:20px;
+  width: 90%;
+  margin-left: 80px;
+  background-color:   rgb(132, 129, 129);
   display: grid;
-  grid-template-columns: 0.5fr 1fr 1fr;
-  height: 200px;
+  grid-template-columns: 1fr 1fr;
+  height: 100px;
 }
 .ava{
   position: relative;
-  border: solid gray 0.5px;
-}
-.ava img{
-  margin-top:10px;
-  margin-left:50px;
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
+
 }
 
 .center{
   padding-top:10px;
-  border: solid gray 0.5px;
+  padding-left: 5%;
+
 }
 .right{
   padding-top:10px;
-  border: solid gray 0.5px;
-}
 
+}

@@ -1,3 +1,4 @@
+import API from "../API";
 const SET_USER_DATA = "SET_USER_DATA";
 
 let initialState = {
@@ -7,16 +8,12 @@ let initialState = {
 };
 
 const authReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case SET_USER_DATA:
-      return { ...state, ...action.data };
-    default:
-      return { ...state };
+  switch (action.type) {case SET_USER_DATA:return { ...state, ...action.data };
+  default:return { ...state };
   }
 };
 
-export const setAuth = (data) => {
-  return { type: SET_USER_DATA, data };
-};
+export const setAuth = (data) => {return { type: SET_USER_DATA, data }};
+export const authTC=()=>{return (dispatch)=>{API.getAuth().then((response) => {dispatch(setAuth(response.data.data))});}}
 
 export default authReducer;

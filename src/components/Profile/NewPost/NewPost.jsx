@@ -1,12 +1,8 @@
 import React from "react";
-import NewPost_class from "./NewPost.module.css";
+import s from "./NewPost.module.css";
 
 
 const NewPost = (props) => {
-  let newPostElement = React.createRef();
-
-
-
 
   let onPostChange = (e) => {
     let text=e.target.value;
@@ -14,10 +10,12 @@ const NewPost = (props) => {
   };
 
   return (
-    <div>
-      <div className={NewPost_class.prof}>
+    <div className={s.container}>
+      <div className={s.prof}>
         <p>My POSTS</p>
         <textarea
+
+        placeholder='type new post'
           onChange={onPostChange}
           value={props.postChange}
         />

@@ -2,12 +2,15 @@ import React from "react";
 import s from "./../Header/Header.module.css";
 import { NavLink } from "react-router-dom";
 
+let image='https://static.vecteezy.com/system/resources/previews/009/380/774/original/planet-clipart-design-illustration-free-png.png';
 const Header = (props) => {
+PersonaId=props.auth.id;
   return (
     <div className={s.container}>
       <div className={s.sub_container}>
         <div className={s.header}>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrCi_P6qAjVaqpOGoLnuPhL6r2Qta-qJexhCKyvHsgRMkX9xG7R3o46k067nOzOcIyA4k&usqp=CAU"></img>
+        <NavLink to={`/profile/${props.auth.id}`}><img src={image}/></NavLink>
+          
         </div>
         <div className={s.center}>
           <p>menu</p>
@@ -33,5 +36,5 @@ const Header = (props) => {
     </div>
   );
 };
-
+export var PersonaId;
 export default Header;
