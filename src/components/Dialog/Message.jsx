@@ -4,10 +4,13 @@ import Users from "./User/Users";
 import Messages from "./Messages/Messages";
 
 
+
 const Dialogs = (props) => {
   let userElement = props.dialogPage.messageList.map((el) => <Users name={el.name} />);
   let messageElement = props.dialogPage.messageList.map((el) =><Messages post={el.post} />);
   let onNewMessageChange = (e) => {let body = e.target.value; props.onNewMessageChange(body);}
+
+
   return (
     
     <div className={Style.dialogContainer}>

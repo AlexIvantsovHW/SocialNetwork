@@ -19,9 +19,3 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
       </BrowserRouter>
     </React.StrictMode>
   );
-
-{/*rerenderEntireTree(store.getState());
-store.subscribe(()=>{
-  let state=store.getState();
-  rerenderEntireTree(state)});
-*/}

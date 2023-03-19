@@ -1,0 +1,10 @@
+.container{
+    display: grid;
+    width: 90%;
+    margin: 0 50px 0 20px;
+    height:80%;
+    border:  rgb(103, 103, 103) solid;
+    border-radius: 30px;
+    border-width: 0.5px;
+    background-color: rgb(70, 70, 70);
+}

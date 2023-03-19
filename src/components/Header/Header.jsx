@@ -2,10 +2,12 @@ import React from "react";
 import s from "./../Header/Header.module.css";
 import { NavLink } from "react-router-dom";
 
+
 let image='https://static.vecteezy.com/system/resources/previews/009/380/774/original/planet-clipart-design-illustration-free-png.png';
 const Header = (props) => {
 PersonaId=props.auth.id;
-  return (
+let loginSource='https://social-network.samuraijs.com/login';
+return (
     <div className={s.container}>
       <div className={s.sub_container}>
         <div className={s.header}>
@@ -19,7 +21,7 @@ PersonaId=props.auth.id;
           <div className={s.sub_login}>
           <div className={s.login}>
           <NavLink><p>
-            {props.auth.login===null?'Login':props.auth.login}
+            {props.auth.login===null?<a href={loginSource}>Login</a>:props.auth.login}
             </p></NavLink>
           </div>
           <div className={s.id}>

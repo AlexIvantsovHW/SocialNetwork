@@ -1,13 +1,20 @@
 import React from "react";
 import Profile from "./Profile";
 import { connect } from "react-redux";
-import { setProfile,profileTC } from "../../redux/profile-reducer";
+import { setProfile,profileTC,setStatus } from "../../redux/profile-reducer";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { statusTC } from './../../redux/profile-reducer';
 
 
 class ProfileAPI extends React.Component {
-  componentDidMount() { let profileId = this.props.router.params.id; this.props.profileTC(profileId);}
-  render() {return (<div><Profile {...this.props} Profile={this.props.Profile}/></div>);}
+  componentDidMount() {
+     let profileId = this.props.router.params.id;
+      this.props.profileTC(profileId);
+    this.props.statusTC(profileId);
+    }
+  render() {
+    return (<div><Profile {...this.props} Profile={this.props.Profile} 
+      status={this.props.status} updateStatus={this.props.setStatus}/></div>);}
 }
 
 function withRouter(Component) {
@@ -20,7 +27,8 @@ function withRouter(Component) {
   return ComponentWithRouterProp;
 }
 
-const mapStateToProps = (state) => {return {Profile: state.profilePage.Profile};};
-const ProfileContainer = connect(mapStateToProps, { setProfile,profileTC })(withRouter(ProfileAPI));
+const mapStateToProps = (state) => { return {Profile: state.profilePage.Profile,
+   status:state.profilePage.status};};
+const ProfileContainer = connect(mapStateToProps, { setProfile,profileTC,statusTC,setStatus})(withRouter(ProfileAPI));
 
 export default ProfileContainer;

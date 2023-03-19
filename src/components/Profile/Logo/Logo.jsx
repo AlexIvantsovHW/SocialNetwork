@@ -2,7 +2,6 @@ import React from "react";
 import s from '../Logo/Logo.module.css'
 
 const Logo = (props) => {
-  debugger;
   let anonimPhoto = "https://cdn-icons-png.flaticon.com/512/1177/1177568.png";
   let Unknown='Unknown'
   return (

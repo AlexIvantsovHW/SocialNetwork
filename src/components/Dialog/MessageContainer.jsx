@@ -1,11 +1,14 @@
 import {UP_MessageNewBodyCreator,SendMessageCreator,} from "../../redux/dialog-reducer";
 import Message from "./Message";
 import { connect } from 'react-redux';
+import { compose } from "redux";
+import { withAuthNavigate } from "../HOC/withAuthNavigate";
 
 let mapStateToProps=(state)=>{
   
   return{
     dialogPage:state.dialogPage,
+    auth:state.auth,
   }
 }
 
@@ -15,7 +18,9 @@ let mapDispatchToProps=(dispatch)=>{
     onMessageClick:()=>dispatch(SendMessageCreator()),
 } 
   }
-   
 
-const MessageContainer =connect(mapStateToProps,mapDispatchToProps)(Message);
-export default MessageContainer;
+export default compose(
+  connect(mapStateToProps,mapDispatchToProps),
+  withAuthNavigate
+)(Message)
+

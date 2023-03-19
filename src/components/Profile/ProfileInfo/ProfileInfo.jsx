@@ -7,8 +7,9 @@ const MyProfile = (props) => {
   return (
     <div>
       <Logo Profile={props.Profile}/>
-      <Ava Profile={props.Profile}/>
+      <Ava Profile={props.Profile} status={props.status} updateStatus={props.updateStatus}/>
       <NewPostContainer />
+
     </div>
   );
 };

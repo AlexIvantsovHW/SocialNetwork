@@ -10,14 +10,22 @@ import {
 } from "./../../redux/users-reducer";
 import React from "react";
 import Preloader from './Preloader/Preloader'
+import { compose } from 'redux';
+import {withAuthNavigate}  from "../HOC/withAuthNavigate";
+
+
 
 
 class UsersAPIcomponent extends React.Component {
-  componentDidMount() {this.props.getUsersTC(this.props.currentPage,this.props.pageSize);}
+  
+  componentDidMount() {
+    this.props.getUsersTC(this.props.currentPage,this.props.pageSize);
+  }
 
   onPostChange = (p) => {this.props.onPostChangeTC(p,this.props.pageSize)}
   
   render() {
+
     return (
       <>
       {this.props.loadingData?<Preloader/>:null}
@@ -41,12 +49,15 @@ let mapToStateProps = (state) => {
     totalUsers: state.userPage.totalUsers,
     currentPage: state.userPage.currentPage,
     loadingData:state.userPage.loadingData,
+    auth:state.auth,
 
   };
 };
 
-const UsersContainer = connect(mapToStateProps,
-  {unfollowAccept,followAccept,getUsersTC,
-     onPostChangeTC,followTC,unfollowTC })(UsersAPIcomponent);
 
-export default UsersContainer;
+export default compose(
+  
+  connect(mapToStateProps,{unfollowAccept,followAccept,getUsersTC,onPostChangeTC,followTC,unfollowTC }),
+  withAuthNavigate
+)
+(UsersAPIcomponent)

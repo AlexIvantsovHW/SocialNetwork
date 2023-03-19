@@ -7,6 +7,7 @@ const instance = axios.create({
 });
 
 const API = {
+  
   getUsers(p = 1, pageSize = 10, currentPage) {
     return instance
       .get(`/users?page=${p === null ? currentPage : p}&count=${pageSize}`)
@@ -22,6 +23,14 @@ const API = {
         return response.data;
       });
   },
+
+  getStatus(profileId=2){    
+    return instance
+    .get(`/profile/status/${profileId}`)
+    .then((response) => {
+      return response.data;
+    });},
+
 
   getAuth(){ return instance.get("/auth/me")},
   getFollow(id) {return instance.delete(`/follow/${id}`)},
