@@ -13,23 +13,24 @@ let initialAction={
           { id: 3, name: "Alina", message: "Hey man!" },
           { id: 4, name: "Jastin", message: "Hey man!" },
         ],
-        newPostText: "New post.... write there",
         Profile:null,
         status:'---',
     }
 
 
 const profileReducer=(state=initialAction,action)=>{
-    let stateCopy={...state, userList:[...state.userList]}; 
-    
         switch(action.type){
+          
         case ADD_POST:
-            let newPost = {id: 5,name: "Grigory",message:state.newPostText,};
-            stateCopy.userList.push(newPost);
-            stateCopy.newPostText = "";     
-            return stateCopy;
+            let body=action.post;
+            return{
+                ...state,
+                userList:[...state.userList,{ id: 5, name: 'Alexander', message: body}],
+            newPostText:''
+            }
+ 
 
-        case UPC: stateCopy.newPostText=action.newText;return stateCopy;
+        case UPC:return{...state,newPostText:action.post};
         case SET_PROFILE:return {...state,Profile:action.Profile};
         case SET_STATUS: return{...state,status:action.status};
    
@@ -37,8 +38,8 @@ const profileReducer=(state=initialAction,action)=>{
         }
     }
 
-export const addPostActionCreator=()=>{return({type:ADD_POST})}
-export const UpdatePostChangeActionCreator=(text)=>{return({type:UPC,newText:text})}
+export const addPostActionCreator=(post)=>{return({type:ADD_POST,post})}
+export const UpdatePostChangeActionCreator=(post)=>{return({type:UPC,post:post})}
 export const setProfile=(Profile)=>{return({type:SET_PROFILE,Profile})}
 export const profileTC=(id)=>{return (dispatch)=>{API.getProfile(id).then((data) => dispatch(setProfile(data)));}}
 export const statusTC=(id)=>{ return (dispatch)=>{API.getStatus(id).then((data)=>dispatch(setStatus(data)))}}

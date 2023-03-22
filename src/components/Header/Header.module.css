@@ -36,7 +36,7 @@
 
   .sub_right{
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
   }
   .right{
     display: flex;
@@ -71,4 +71,43 @@
     height: 15px;
     align-items: center;
     padding-top: 5px;
+}
+.head button{
+  cursor: pointer;
+  background-color: rgb(46, 46, 46);
+  border: solid 0.5px  rgb(103, 103, 103);
+  border-radius: 10px;
+  height: 50px;
+  width: 150px;
+  color: white;
+  font-size: 20px;
+}
+.head button:hover{
+  background-color: rgb(46, 46, 46);
+  border-width: 2px;
+  border-top: solid rgb(46, 46, 46);
+  border-bottom: solid  rgb(46, 46, 46);
+  color: rgba(0, 255, 34);
+  transition: 400ms;
+  font-size: 20px;
+}
+.logout button{
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: rgb(46, 46, 46);
+  border: solid 0.5px  rgb(103, 103, 103);
+  border-radius: 10px;
+  height: 30px;
+  width: 150px;
+  color: white;
+  font-size: 20px;;
+}
+.logout button:hover{
+  background-color: rgb(46, 46, 46);
+  height: 30px;
+  border-top: solid rgb(46, 46, 46);
+  border-bottom: solid  rgb(46, 46, 46);
+  color: red;
+  transition: 400ms;
+  font-size: 20px;
 }

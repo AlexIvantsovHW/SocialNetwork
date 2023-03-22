@@ -5,7 +5,6 @@ export const withAuthNavigate =(Component)=>{
  
     class NavigateComponent extends React.Component{       
         render(){
-            debugger;
             if(!this.props.auth.id) return <Navigate to='/login'/>;
             return <Component {...this.props}/>
         }

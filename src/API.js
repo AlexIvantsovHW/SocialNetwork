@@ -6,6 +6,7 @@ const instance = axios.create({
   headers: {"API-KEY": "07b5797b-20dd-41ae-b7b1-f952a9fe64b0"},
 });
 
+let captcha=false;
 const API = {
   
   getUsers(p = 1, pageSize = 10, currentPage) {
@@ -25,12 +26,23 @@ const API = {
   },
 
   getStatus(profileId=2){    
+    
     return instance
     .get(`/profile/status/${profileId}`)
     .then((response) => {
       return response.data;
     });},
 
+  login(email,password,rememberMe){
+    debugger;
+    return instance
+    .post(`/auth/login`,{email,password,rememberMe,captcha})},
+   
+
+logout(){
+      return instance
+      .delete(`/auth/login`)},
+  
 
   getAuth(){ return instance.get("/auth/me")},
   getFollow(id) {return instance.delete(`/follow/${id}`)},

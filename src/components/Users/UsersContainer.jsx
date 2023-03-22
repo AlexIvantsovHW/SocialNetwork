@@ -11,7 +11,7 @@ import {
 import React from "react";
 import Preloader from './Preloader/Preloader'
 import { compose } from 'redux';
-import {withAuthNavigate}  from "../HOC/withAuthNavigate";
+import {withAuthNavigate}  from "../HOC/withSignNavigate";
 
 
 

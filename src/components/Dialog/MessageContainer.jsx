@@ -1,8 +1,8 @@
-import {UP_MessageNewBodyCreator,SendMessageCreator,} from "../../redux/dialog-reducer";
+ import {UP_MessageNewBodyCreator,SendMessageCreator,} from "../../redux/dialog-reducer";
 import Message from "./Message";
 import { connect } from 'react-redux';
 import { compose } from "redux";
-import { withAuthNavigate } from "../HOC/withAuthNavigate";
+import { withAuthNavigate } from "../HOC/withSignNavigate";
 
 let mapStateToProps=(state)=>{
   
@@ -14,8 +14,8 @@ let mapStateToProps=(state)=>{
 
 let mapDispatchToProps=(dispatch)=>{
   return{
-    onNewMessageChange:(body)=> dispatch(UP_MessageNewBodyCreator(body)),
-    onMessageClick:()=>dispatch(SendMessageCreator()),
+    onNewMessageChange:(message)=> dispatch(UP_MessageNewBodyCreator(message)),
+    onMessageClick:(message)=>dispatch(SendMessageCreator(message)),
 } 
   }
 

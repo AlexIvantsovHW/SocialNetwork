@@ -7,17 +7,16 @@ import { connect } from "react-redux";
 
 let mapStateToProps = (state) => {
   return { 
-    state: state.profilePage 
+    state: state.profilePage,
+    auth:state.auth, 
   }
 };
 
 let mapDispatchToProps = (dispatch) => {
+  debugger;
   return {
-    addPost: () => {
-    dispatch(addPostActionCreator());
-    },
-    onPostChange: (text) => {
-      dispatch(UpdatePostChangeActionCreator(text));
+    addPost: (post) => {dispatch(addPostActionCreator(post));},
+    onPostChange: (post) => {dispatch(UpdatePostChangeActionCreator(post));
     },
   };
 };

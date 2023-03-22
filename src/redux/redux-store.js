@@ -5,6 +5,7 @@ import profileReducer from "./profile-reducer";
 import usersReducer from './users-reducer';
 import thunk from "redux-thunk";
 import { reducer as formReducer } from 'redux-form'
+import signReducer from './sign-reducer';
 
 
 let reducers=combineReducers({
@@ -12,6 +13,7 @@ let reducers=combineReducers({
     dialogPage:dialogReducer,
     userPage:usersReducer,
     auth:authReducer,
+    sign:signReducer,
     form: formReducer
 })
 

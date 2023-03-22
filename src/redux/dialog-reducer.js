@@ -8,8 +8,7 @@ let initialAction={
           { name: "Alina", post: "thx" },
           { name: "Jastin", post: "and u?" },
         ],
-        newMessageBody:'',
-}
+    }
 
 const dialogReducer=(state=initialAction,action)=>{
 
@@ -21,11 +20,10 @@ const dialogReducer=(state=initialAction,action)=>{
             newMessageBody:action.body}
 
         case SEND_MESSAGE:{
-            let body=state.newMessageBody;
+            let body=action.message;
             return{
                 ...state,
                 messageList:[...state.messageList,{ name: "Alex", post:body }],
-                newMessageBody:''
             }    
         }        
             default: return state;
@@ -33,6 +31,6 @@ const dialogReducer=(state=initialAction,action)=>{
 }
 
 
-export const SendMessageCreator=()=>{return({type:SEND_MESSAGE})}
+export const SendMessageCreator=(message)=>{return({type:SEND_MESSAGE,message})}
 export const UP_MessageNewBodyCreator =(body)=>{return ({type:UP_MessageNewBody,body:body})}
 export default dialogReducer;

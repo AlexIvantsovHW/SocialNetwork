@@ -15,7 +15,6 @@ diactivateMode=()=>{this.setState({editMode:false})}
 changeStatus= (e) => {body = e.target.value; this.props.updateStatus(body)}
 
 componentDidUpdate(prevProps,prevState){
-  debugger;
   let b=this.props.status; 
   if (this.prevProps!==this.status){this.setState({statusText:this.props.status})}
   console.log('It update')

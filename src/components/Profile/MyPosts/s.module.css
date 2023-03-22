@@ -1,0 +1,33 @@
+.container{
+    display: grid;
+    margin-left: 5%;
+    width: 90%;
+    height: fit-content;
+}
+.userContainer{
+    display: flex;
+    width:100%;
+    margin-top: 5px;
+
+}
+.userImg{
+    height: 30px;
+    width: 30px;
+}
+
+.userImg img{
+       height: 30px;
+    width: 30px; 
+}
+.userName{
+    width: 100px;
+}
+.postContainer{
+    padding-left: 20px;
+    background-color: rgb(208, 207, 207);
+    margin-left:20px;
+    width: 100vh;
+    height: fit-content;
+    border: solid gray 0.5px;
+    border-radius: 20px;
+}
