@@ -1,16 +1,16 @@
 import React from "react";
 import s from "./../Header/Header.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, Navigate, NavLink } from "react-router-dom";
 
 
 
 let image='https://static.vecteezy.com/system/resources/previews/009/380/774/original/planet-clipart-design-illustration-free-png.png';
 const Header = (props) => {
-  debugger;
 PersonaId=props.auth.id;
 
-let LogOUT=(props)=>{debugger;return (props.logoutTC)}
+let LogOUT=(props)=>{return (props.logoutTC)}
 let loginSource='https://social-network.samuraijs.com/login';
+
 return (
     <div className={s.container}>
       <div className={s.sub_container}>

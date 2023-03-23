@@ -6,6 +6,7 @@ import usersReducer from './users-reducer';
 import thunk from "redux-thunk";
 import { reducer as formReducer } from 'redux-form'
 import signReducer from './sign-reducer';
+import initReducer from "./init-reducer";
 
 
 let reducers=combineReducers({
@@ -14,7 +15,8 @@ let reducers=combineReducers({
     userPage:usersReducer,
     auth:authReducer,
     sign:signReducer,
-    form: formReducer
+    form: formReducer,
+    init:initReducer,
 })
 
 const store=createStore(reducers,applyMiddleware(thunk));

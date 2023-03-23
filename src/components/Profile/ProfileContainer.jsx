@@ -4,9 +4,15 @@ import { connect } from "react-redux";
 import { setProfile,profileTC,setStatus } from "../../redux/profile-reducer";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { statusTC } from './../../redux/profile-reducer';
+import { compose } from 'redux';
+import { getProfile, getStatus } from "../../selectors/selectors";
+
+
+
 
 
 class ProfileAPI extends React.Component {
+  
   componentDidMount() {
      let profileId = this.props.router.params.id;
       this.props.profileTC(profileId);
@@ -17,7 +23,7 @@ class ProfileAPI extends React.Component {
       status={this.props.status} updateStatus={this.props.setStatus}/></div>);}
 }
 
-function withRouter(Component) {
+export var withRouter=function (Component) {
   function ComponentWithRouterProp(props) {
     let location = useLocation();
     let navigate = useNavigate();
@@ -26,9 +32,13 @@ function withRouter(Component) {
   }
   return ComponentWithRouterProp;
 }
+;
 
-const mapStateToProps = (state) => { return {Profile: state.profilePage.Profile,
-   status:state.profilePage.status};};
-const ProfileContainer = connect(mapStateToProps, { setProfile,profileTC,statusTC,setStatus})(withRouter(ProfileAPI));
+const mapStateToProps = (state) => { return {Profile: getProfile(state),status:getStatus(state)};};
 
-export default ProfileContainer;
+export default compose(withRouter,
+  connect(mapStateToProps, { setProfile,profileTC,statusTC,setStatus}),
+  )(ProfileAPI);
+
+
+

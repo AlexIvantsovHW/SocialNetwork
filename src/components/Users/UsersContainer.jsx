@@ -12,6 +12,7 @@ import React from "react";
 import Preloader from './Preloader/Preloader'
 import { compose } from 'redux';
 import {withAuthNavigate}  from "../HOC/withSignNavigate";
+import { getAuth, getLoadData, getPage, getPagesSize, getTotalUsers, getUsers } from './../../selectors/selectors';
 
 
 
@@ -44,12 +45,12 @@ class UsersAPIcomponent extends React.Component {
 
 let mapToStateProps = (state) => {
   return {
-    UserPage: state.userPage,
-    pageSize: state.userPage.pageSize,
-    totalUsers: state.userPage.totalUsers,
-    currentPage: state.userPage.currentPage,
-    loadingData:state.userPage.loadingData,
-    auth:state.auth,
+    UserPage: getUsers(state),
+    pageSize: getPagesSize(state),
+    totalUsers: getTotalUsers(state),
+    currentPage:getPage(state),
+    loadingData:getLoadData(state),
+    auth:getAuth(state),
 
   };
 };

@@ -3,12 +3,13 @@ import Message from "./Message";
 import { connect } from 'react-redux';
 import { compose } from "redux";
 import { withAuthNavigate } from "../HOC/withSignNavigate";
+import { getAuth, getDialogs } from "../../selectors/selectors";
 
 let mapStateToProps=(state)=>{
   
   return{
-    dialogPage:state.dialogPage,
-    auth:state.auth,
+    dialogPage:getDialogs(state),
+    auth:getAuth(state),
   }
 }
 

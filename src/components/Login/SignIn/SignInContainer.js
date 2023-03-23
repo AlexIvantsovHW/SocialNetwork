@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import SignIn from "./SignIn";
 import { signTC,setSign } from "../../../redux/sign-reducer";
+import { getForm } from './../../../selectors/selectors';
 
 class SignInContainer extends React.Component{
 
@@ -10,7 +11,6 @@ class SignInContainer extends React.Component{
        } 
 
     render(){
-        debugger;
         return (
         <div>
             <SignIn form={this.props.form} signTC={this.props.signTC}/>
@@ -21,7 +21,7 @@ class SignInContainer extends React.Component{
 
 let mapStateToProps=(state)=>{
     return {
-        form:state.form,
+        form: getForm(state),
     }
     
 }
