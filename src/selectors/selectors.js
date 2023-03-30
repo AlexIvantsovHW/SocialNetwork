@@ -6,7 +6,6 @@ export const getLoadData=(state)=>{return state.userPage.loadingData;}
 export const getAuth=(state)=>{return state.auth;}
 
 export const getProfile=(state)=>{return state.profilePage.Profile;}
-export const getUserStatus=(state)=>{debugger;
-    return state.profilePage.status;}
+export const getStatus=(state)=>{return state.profilePage.status;}
 export const getForm=(state)=>{return state.form;}
 export const getDialogs=(state)=>{return state.dialogPage;}

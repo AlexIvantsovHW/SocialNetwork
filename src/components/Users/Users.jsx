@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import s from "./Users.module.css";
 
-
 const Users = (props) => {
   debugger;
   let anonimPhoto = "https://cdn-icons-png.flaticon.com/512/1177/1177568.png";

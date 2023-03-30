@@ -1,14 +1,13 @@
 import { React } from "react";
 import Logo from '../Logo/Logo';
-import ProfileBar from "../Avatar/ProfileBar";
+import Ava from '../Avatar/Avatar';
 import NewPostContainer from '../NewPost/NewPostContainer';
 
 const MyProfile = (props) => {
-  debugger;
   return (
     <div>
       <Logo Profile={props.Profile}/>
-      <ProfileBar Profile={props.Profile} Status={props.Status} updateStatus={props.updateStatus}/>
+      <Ava Profile={props.Profile} status={props.status} updateStatus={props.updateStatus}/>
       <NewPostContainer />
 
     </div>

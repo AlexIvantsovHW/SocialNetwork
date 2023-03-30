@@ -4,10 +4,9 @@ import PostContainer from './MyPosts/PostContainer';
 import S from '../Style.module.css'
 
 const Profile = (props) => { 
-  debugger;
     return (
     <div className={S.container}>
-      <ProfileInfo Profile={props.Profile} Status={props.Status} updateStatus={props.updateStatus}/>
+      <ProfileInfo Profile={props.Profile} status={props.status} updateStatus={props.updateStatus}/>
       <PostContainer />
     </div>
   );
