@@ -5,7 +5,7 @@ import { setProfile,profileTC,setStatus } from "../../redux/profile-reducer";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { statusTC } from './../../redux/profile-reducer';
 import { compose } from 'redux';
-import { getProfile, getStatus } from "../../selectors/selectors";
+import { getProfile, getUserStatus} from "../../selectors/selectors";
 
 
 
@@ -20,7 +20,7 @@ class ProfileAPI extends React.Component {
     }
   render() {
     return (<div><Profile {...this.props} Profile={this.props.Profile} 
-      status={this.props.status} updateStatus={this.props.setStatus}/></div>);}
+      Status={this.props.Status} updateStatus={this.props.setStatus}/></div>);}
 }
 
 export var withRouter=function (Component) {
@@ -34,7 +34,7 @@ export var withRouter=function (Component) {
 }
 ;
 
-const mapStateToProps = (state) => { return {Profile: getProfile(state),status:getStatus(state)};};
+const mapStateToProps = (state) => { return {Profile: getProfile(state),Status:getUserStatus(state)};};
 
 export default compose(withRouter,
   connect(mapStateToProps, { setProfile,profileTC,statusTC,setStatus}),

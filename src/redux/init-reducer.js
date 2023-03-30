@@ -9,7 +9,7 @@ let initialState = {
 
 const initReducer = (state = initialState, action) => {
   switch (action.type) 
-  {case INIT_SUCCES: debugger; 
+  {case INIT_SUCCES: 
     return { ...state,initcilization:true}; 
   default:return { ...state };
   }

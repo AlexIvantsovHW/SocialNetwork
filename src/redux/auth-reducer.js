@@ -14,30 +14,30 @@ let initialState = {
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) 
-  {case SET_USER_DATA: debugger; return { ...state, ...action.data };
+  {case SET_USER_DATA:return { ...state, ...action.data };
   case SET_LOGIN:return { ...state, ...action.data }; 
   default:return { ...state };
   }
 };
 
 export const setAuth = (data) => {return { type: SET_USER_DATA, data }};
-export const authTC=()=>{return (dispatch)=>{API.getAuth().then((response) => {debugger; dispatch(setAuth(response.data.data))});}}
+export const authTC=()=>{return (dispatch)=>{API.getAuth().then((response) => { dispatch(setAuth(response.data.data))});}}
 
 export const loginTC=(email,password,rememberMe,captcha)=>{return (dispatch)=>{
-  debugger;
+  
     API
    .login(email,password,rememberMe,captcha)
    .then((response)=>{
-    debugger;
+    
     if (response.data.resultCode===0){dispatch(authTC())}
-  else{debugger;
+  else{
     dispatch(stopSubmit('login',{_error:response.data.messages}))
     }})
    }}
 
 
   export const logoutTC=()=>{return (dispatch)=>{
-    debugger;
+    
     API.logout()
     .then((response)=>{
      if (response.data.resultCode===0){dispatch(authTC(null,null,null,null))}})

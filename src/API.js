@@ -6,9 +6,19 @@ const instance = axios.create({
   headers: {"API-KEY": "07b5797b-20dd-41ae-b7b1-f952a9fe64b0"},
 });
 
-let captcha=false;
+const musicInstance = axios.create({
+  baseURL: 'https://spotify23.p.rapidapi.com/tracks/',
+  params: {ids: '4WNcduiCmDNfmTEz7JvmLv'},
+  headers: {
+    'X-RapidAPI-Key': '68a32bd379msh4964bdee059d5a0p184d67jsnbce2d19ed40b',
+    'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+  }
+})
+
+let captcha=false
+
 const API = {
-  
+
   getUsers(p = 1, pageSize = 10, currentPage) {
     return instance
       .get(`/users?page=${p === null ? currentPage : p}&count=${pageSize}`)
@@ -30,7 +40,7 @@ const API = {
     return instance
     .get(`/profile/status/${profileId}`)
     .then((response) => {
-      return response.data;
+      return response.data===null?'empty status':response.data;
     });},
 
   login(email,password,rememberMe){
@@ -49,6 +59,13 @@ logout(){
   getUnfollow(id) {return instance.post(`/follow/${id}`)},
   
 
+  getTracks(id) {
+    debugger;
+    return musicInstance
+    .get(id).then((response)=>{return response.data})
+    
+  },
 };
+
 
 export default API;
