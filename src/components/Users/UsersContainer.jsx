@@ -13,6 +13,7 @@ import Preloader from './Preloader/Preloader'
 import { compose } from 'redux';
 import {withAuthNavigate}  from "../HOC/withSignNavigate";
 import { getAuth, getLoadData, getPage, getPagesSize, getTotalUsers, getUsers } from './../../selectors/selectors';
+import User from "./User";
 
 
 
@@ -30,7 +31,7 @@ class UsersAPIcomponent extends React.Component {
     return (
       <>
       {this.props.loadingData?<Preloader/>:null}
-      <Users
+      <User
         totalUsers={this.props.totalUsers}
         pageSize={this.props.pageSize}
         UserPage={this.props.UserPage}

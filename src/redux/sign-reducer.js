@@ -15,10 +15,9 @@ const signReducer = (state = initialState, action) => {
 };
 
 export const setSign = (data) => {return { type: SET_SIGN, data }};
-export const signTC=(formData)=>{debugger; 
-    return (dispatch)=>
-    {API.getSign(formData)
-        .then((response) => 
-        {dispatch(setSign(response.data.data))});}}
+export const signTC=(formData)=>{ 
+    return async (dispatch)=>
+    { let response= await API.getSign(formData);
+    dispatch(setSign(response.data.data));}}
 
 export default signReducer;

@@ -1,10 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { anonimPhoto } from "../Common/Pictures";
 import s from "./Users.module.css";
 
 const Users = (props) => {
-  debugger;
-  let anonimPhoto = "https://cdn-icons-png.flaticon.com/512/1177/1177568.png";
   let pagesCount = Math.ceil(props.totalUsers / props.pageSize);
   let dispayPages = [];
   for (let i = 1; i <= pagesCount; i++) {
@@ -12,11 +11,9 @@ const Users = (props) => {
   }
 
   let userElement = props.UserPage.users.map((el) => {
-
     return (
-      
       <div>
-        <div className={s.container}>
+        <div className={s.user_container}>
           <div>
             <NavLink to={"/profile/" + el.id}>
               <img
@@ -24,7 +21,10 @@ const Users = (props) => {
                 className={s.ava}
               />
             </NavLink>
-            <div className={s.name}>{`${el.name}`}</div>
+            <div className={s.userName}>{`${el.name}`}</div>
+        
+          </div>
+          <div>
             {el.followed ? (
               <button
                 className={s.button} onClick={() => {props.unfollow(el.id); props.follow(el.id);}}>
@@ -35,7 +35,7 @@ const Users = (props) => {
                 Follow
               </button>
             )}
-          </div>
+            </div>
           <div>
             <div className={s.status}>{el.status}</div>
           </div>
@@ -67,6 +67,7 @@ const Users = (props) => {
           })}
         </div>
       </div>
+
       {userElement}
     </div>
   );

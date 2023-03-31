@@ -41,8 +41,8 @@ const profileReducer=(state=initialAction,action)=>{
 export const addPostActionCreator=(post)=>{return({type:ADD_POST,post})}
 export const UpdatePostChangeActionCreator=(post)=>{return({type:UPC,post:post})}
 export const setProfile=(Profile)=>{return({type:SET_PROFILE,Profile})}
-export const profileTC=(id)=>{return (dispatch)=>{API.getProfile(id).then((data) => dispatch(setProfile(data)));}}
-export const statusTC=(id)=>{ return (dispatch)=>{API.getStatus(id).then((data)=>dispatch(setStatus(data)))}}
+export const profileTC=(id)=>{return async (dispatch)=>{let data=await API.getProfile(id); dispatch(setProfile(data));}}
+export const statusTC=(id)=>{ return async (dispatch)=>{let data=await API.getStatus(id); dispatch(setStatus(data))}}
 export const setStatus=(status)=>{return({type:SET_STATUS,status:status})}
 
 
