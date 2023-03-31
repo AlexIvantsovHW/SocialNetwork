@@ -9,7 +9,7 @@ const LOADING_DATA = "LOADING_DATA";
 
 let initialAction = {
   users: [],
-  pageSize: 50,
+  pageSize: 10,
   totalUsers: 2000,
   currentPage: [1],
   loadingData: false,
