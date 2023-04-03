@@ -57,7 +57,7 @@ let rightPortionBoundary=portionNumber*portionSize;
       <div className={s.top}>Пользователи</div>
       <div>
 <div className={s.pageString}>
-        {portionNumber>1 && <div className={s.arrow}><img src='lArrow.png' onClick={()=>{setPortionNumber(portionNumber-1)}}/></div>}
+        {portionNumber>1 && <div className={s.arrow}><img src='../lArrow.png' onClick={()=>{setPortionNumber(portionNumber-1)}}/></div>}
        <div>
         {dispayPages.filter((p)=>p>=leftPortionBoundary&&p<=rightPortionBoundary).map((p) => {
           return (
@@ -71,7 +71,7 @@ let rightPortionBoundary=portionNumber*portionSize;
           );
         })}
         </div>
-           {portionCount> portionNumber && <div className={s.arrow}><img src='rArrow.png'className={s.arrow} onClick={()=>{setPortionNumber(portionNumber+1)}}/></div>}
+           {portionCount> portionNumber && <div className={s.arrow}><img src='../git rArrow.png'className={s.arrow} onClick={()=>{setPortionNumber(portionNumber+1)}}/></div>}
       </div>
       </div>
 
