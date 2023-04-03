@@ -6,7 +6,7 @@ import s from './Style.module.css'
 
 const SPOTIFY_AUTH_ENDPOINT='https://accounts.spotify.com/authorize';
 const CLIENT_ID='04db25ea8cb94578b52945855a8469ec';
-const REDIRECT_URL_AFTER_LOGIN='http://localhost:3000/music'
+const REDIRECT_URL_AFTER_LOGIN='https://alexivantsovhw.github.io/SocialNetwork/#/music'
 const SCOPES=['user-read-currently-playing','user-read-playback-state']
 const SCOPES_DELIMETER='%20';
 const SCOPES_URL_PARAM=SCOPES.join(SCOPES_DELIMETER)
