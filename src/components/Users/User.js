@@ -32,7 +32,7 @@ let rightPortionBoundary=portionNumber*portionSize;
           {" "}
           {el.followed ? (
             <img
-              src="Unfollow.png"
+              src="../Unfollow.png"
               onClick={() => {
                 props.unfollow(el.id);
                 props.follow(el.id);
@@ -40,7 +40,7 @@ let rightPortionBoundary=portionNumber*portionSize;
             />
           ) : (
             <img
-              src="Follow.png"
+              src="../Follow.png"
               onClick={() => {
                 props.follow(el.id);
                 props.unfollow(el.id);
