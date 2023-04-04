@@ -7,6 +7,9 @@
   background-color: rgb(38, 38, 38);
 }
 .nav p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 15px;
   list-style: none;
   text-decoration:none;
@@ -14,12 +17,37 @@
   font-weight: bold;
 }
 
-p:hover{
-  color:rgba(4, 252, 194, 0.647);
-  transition: 400ms;
-}
-
 link{
   text-decoration: none;
 }
 
+nav img{
+  height: 20px;
+  width: 20px;
+}
+
+.column{
+  display: flex;
+  align-items: center;
+ 
+  grid-template-columns: 0.5fr 2fr;
+}
+.lColumn{
+  display: flex;
+  align-items: center;
+  height: 35px;
+
+}
+.rColumn{
+  display: flex;
+  justify-content: center;
+  padding-left: 10px;
+  height: 35px;
+}
+
+.column:hover{
+
+    filter:drop-shadow(0 0 5px rgba(4, 252, 194, 0.647));
+    transition: 400ms;
+
+}

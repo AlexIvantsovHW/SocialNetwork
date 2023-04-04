@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import s from "./Style.module.css";
 
 import { NavLink } from "react-router-dom";
-import { anonimPhoto,leftArrow,rightArrow, unfollowImg,followImg } from "../Common/Pictures/Pictures.js";
+import { anonimPhoto} from "../Common/Pictures/Pictures.js";
+import { picture } from "../Common/Pictures/Pictures.js"; 
+
 
 const User = (props) => {
   let pagesCount = Math.ceil(props.totalUsers / props.pageSize);
@@ -32,7 +34,7 @@ let rightPortionBoundary=portionNumber*portionSize;
           {" "}
           {el.followed ? (
             <img
-              src={unfollowImg}
+              src={picture.light.unfollow}
               onClick={() => {
                 props.unfollow(el.id);
                 props.follow(el.id);
@@ -40,7 +42,7 @@ let rightPortionBoundary=portionNumber*portionSize;
             />
           ) : (
             <img
-              src={followImg}
+              src={picture.light.follow}
               onClick={() => {
                 props.follow(el.id);
                 props.unfollow(el.id);
@@ -57,7 +59,7 @@ let rightPortionBoundary=portionNumber*portionSize;
       <div className={s.top}>Пользователи</div>
       <div>
 <div className={s.pageString}>
-        {portionNumber>1 && <div className={s.arrow}><img src={leftArrow} onClick={()=>{setPortionNumber(portionNumber-1)}}/></div>}
+        {portionNumber>1 && <div className={s.arrow}><img src={picture.light.leftArrow} onClick={()=>{setPortionNumber(portionNumber-1)}}/></div>}
        <div>
         {dispayPages.filter((p)=>p>=leftPortionBoundary&&p<=rightPortionBoundary).map((p) => {
           return (
@@ -71,7 +73,7 @@ let rightPortionBoundary=portionNumber*portionSize;
           );
         })}
         </div>
-           {portionCount> portionNumber && <div className={s.arrow}><img src={rightArrow}className={s.arrow} onClick={()=>{setPortionNumber(portionNumber+1)}}/></div>}
+           {portionCount> portionNumber && <div className={s.arrow}><img src={picture.light.rightArrow}className={s.arrow} onClick={()=>{setPortionNumber(portionNumber+1)}}/></div>}
       </div>
       </div>
 
