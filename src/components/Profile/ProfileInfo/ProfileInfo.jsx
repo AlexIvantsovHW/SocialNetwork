@@ -6,8 +6,8 @@ import NewPostContainer from '../NewPost/NewPostContainer';
 const MyProfile = (props) => {
   return (
     <div>
-      <Logo Profile={props.Profile}/>
-      <Ava Profile={props.Profile} status={props.status} updateStatus={props.updateStatus}/>
+      <Logo Profile={props.Profile} setAvaTC={props.setAvaTC}/>
+      <Ava Profile={props.Profile} status={props.status} updateStatus={props.updateStatus} />
       <NewPostContainer />
 
     </div>

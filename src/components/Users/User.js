@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import s from "./Style.module.css";
 
 import { NavLink } from "react-router-dom";
-import { anonimPhoto,leftArrow,rightArrow,unfollowImg,followImg } from "../Common/Pictures/Pictures.js";
+import { anonimPhoto,leftArrow,rightArrow, unfollowImg,followImg } from "../Common/Pictures/Pictures.js";
 
 const User = (props) => {
   let pagesCount = Math.ceil(props.totalUsers / props.pageSize);

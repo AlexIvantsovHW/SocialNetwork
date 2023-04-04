@@ -1,107 +1,99 @@
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 90%;
-    margin: 0 50px 0 20px;
-    height:max-content;
-    border:  rgb(103, 103, 103) solid;
-    border-radius: 30px;
-    border-width: 0.5px;
-    background-color: rgb(70, 70, 70);
-   
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 50px 0 20px;
+  height: max-content;
+  border: rgb(103, 103, 103) solid;
+  border-radius: 30px;
+  border-width: 0.5px;
+  background-color: rgb(70, 70, 70);
 }
 
-.pageString{
-    display:grid;
-    grid-template-columns: 0.5fr 2fr 0.5fr;
+.pageString {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr;
 }
-.top{
-    display: flex;    
-    height: 50px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    
+.top {
+  display: flex;
+  height: 50px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
-.user_container{
-   display: grid;
-    grid-template-columns: 1fr 1fr 0.5fr;
-   width: 50%;
-        margin-top: 10px;
-        height: 150px;
-        border-radius: 20px;
-        background-color: rgba(224, 218, 218, 0.138);}   
- 
-    
-.user_container:hover{
-    background-color: rgba(224, 218, 218, 0.438)
+.user_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr;
+  width: 50%;
+  margin-top: 10px;
+  height: 150px;
+  border-radius: 20px;
+  background-color: rgba(224, 218, 218, 0.138);
 }
-    .userImg{
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin-left: 10px;
-        
-    }
-    .userImg img{
-        border-radius: 150px;
-        width: 150px;
-        height: 150px;
-    }
 
-    .userImg img:hover{
-        width: 152px;
-        height: 152px;
-        transition: 400ms;
-        filter: drop-shadow(0 0 20px rgba(0, 5, 100, 0.5));
-    }
-    .userName{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-size: 30px;
-        font-weight: bold;
-        color: white;
-    }
-    .pageActive{
-        display: inline;
- 
+.user_container:hover {
+  background-color: rgba(224, 218, 218, 0.438);
+}
+.userImg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+.userImg img {
+  border-radius: 150px;
+  width: 150px;
+  height: 150px;
+}
 
-     color: white;
-    }
+.userImg img:hover {
+  width: 152px;
+  height: 152px;
+  transition: 400ms;
+  filter: drop-shadow(0 0 20px rgba(0, 5, 100, 0.5));
+}
+.userName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+.pageActive {
+  display: inline;
 
-    .pageActive:hover{
-    
-        font-weight: bold;
-        
-    }
-    .followingImg{
-        display:flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin-right: 10px;
+  color: white;
+}
 
-    }
-    .followingImg img{      
-          width:50px;
-        height: 50px;
-        cursor: pointer;
-    filter: drop-shadow(0 0 1px black);
-    }
+.pageActive:hover {
+  font-weight: bold;
+}
+.followingImg {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 10px;
+}
+.followingImg img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 1px black);
+}
 
- .arrow img{
-    display: flex;
-    justify-content: center;
-        cursor: pointer;
-        height:40px;
-        width:50px;
-        filter: drop-shadow(0 0 1px black);
-    }
-    .arrow img:hover{
-        filter: drop-shadow(0 0 2px rgb(0, 255, 30));
-    }
-    
+.arrow img {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  height: 40px;
+  width: 50px;
+  filter: drop-shadow(0 0 1px black);
+}
+.arrow img:hover {
+  filter: drop-shadow(0 0 2px rgb(0, 255, 30));
+}

@@ -12,7 +12,8 @@ state={
 activateMode=()=>{this.setState({editMode:true})}
 diactivateMode=()=>{this.setState({editMode:false})}
 
-changeStatus= (e) => {body = e.target.value; this.props.updateStatus(body)}
+changeStatus= (e) => {
+  body = e.target.value; this.props.updateStatus(body)}
 
 componentDidUpdate(prevProps,prevState){
   let b=this.props.status; 
