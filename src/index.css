@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*Dark theme*/
+html[data-theme='dark']{
+--background-color: rgb(70, 70, 70);
+--display: grid;
+--width: 90%;
+--margin: 0 50px 0 20px;
+--height:fit-content;
+--border:  rgb(103, 103, 103) solid;
+--border-radius: 30px;
+--border-width: 0.5px;
+}
+  
+/*Light theme*/
+html[data-theme='light']{
+--background-color: rgb(55, 255, 0);
+--display: grid;
+--width: 90%;
+--margin: 0 50px 0 20px;
+--height:fit-content;
+--border:  rgb(103, 103, 103) solid;
+--border-radius: 30px;
+--border-width: 0.5px;
+}

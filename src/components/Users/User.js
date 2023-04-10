@@ -4,9 +4,11 @@ import s from "./Style.module.css";
 import { NavLink } from "react-router-dom";
 import { anonimPhoto} from "../Common/Pictures/Pictures.js";
 import { picture } from "../Common/Pictures/Pictures.js"; 
+import { Language } from "../Common/Language/Language";
 
 
 const User = (props) => {
+  let currentLanguage; (props.Language==='Russian'? currentLanguage=Language.Russian.Users:currentLanguage=Language.English.Users)
   let pagesCount = Math.ceil(props.totalUsers / props.pageSize);
   let portionSize=10;
   let portionCount=Math.ceil(pagesCount/portionSize);
@@ -56,7 +58,7 @@ let rightPortionBoundary=portionNumber*portionSize;
 
   return (
     <div className={s.container}>
-      <div className={s.top}>Пользователи</div>
+      <div className={s.top}>{currentLanguage.User}</div>
       <div>
 <div className={s.pageString}>
         {portionNumber>1 && <div className={s.arrow}><img src={picture.light.leftArrow} onClick={()=>{setPortionNumber(portionNumber-1)}}/></div>}

@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import Header from "./Header";
 import { setAuth,authTC,logoutTC } from "../../redux/auth-reducer";
 import { compose } from 'redux';
+import { getLang } from "../../selectors/selectors";
+
 
 
 
@@ -11,6 +13,9 @@ class HeaderAPI extends React.Component {
   render() {return(<Header {...this.props}/>)}
 }
 
-let mapPropsToState = (state) => {return {auth:state.auth,};};
+let mapPropsToState = (state) => {return {
+  auth:state.auth,
+  Language: getLang(state)
+}};
 
 export default compose(connect(mapPropsToState,{setAuth,authTC,logoutTC}))(HeaderAPI)

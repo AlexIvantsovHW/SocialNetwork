@@ -1,6 +1,8 @@
 import React from "react";
 import s from "./../Header/Header.module.css";
 import { Link, Navigate, NavLink } from "react-router-dom";
+import { Language } from "../Common/Language/Language";
+
 
 
 
@@ -10,7 +12,7 @@ PersonaId=props.auth.id;
 
 let LogOUT=(props)=>{return (props.logoutTC)}
 let loginSource='https://social-network.samuraijs.com/login';
-
+let currentLanguage; (props.Language==='Russian'? currentLanguage=Language.Russian:currentLanguage=Language.English)
 return (
     <div className={s.container}>
       <div className={s.sub_container}>
@@ -19,14 +21,13 @@ return (
           
         </div>
         <div className={s.center}>
-          <p>menu</p>
         </div>
         <div className={s.right}>
           <div className={s.sub_login}>
           <div className={s.login}>
             <div  className={s.head}>
             <NavLink><p>
-            {props.auth.login===null?<Link to={'/login'}><button>Войти</button></Link>:props.auth.login}
+            {props.auth.login===null?<Link to={'/login'}><button>{currentLanguage.header.login}</button></Link>:props.auth.login}
             </p></NavLink>
             </div>
                     </div>
@@ -37,7 +38,7 @@ return (
           <p>{props.auth.email===null?'':`email: ${props.auth.email}`}</p>
           </div >
           <div className={s.logout}>
-          {props.auth.email===null?'':<button onClick={()=>{props.logoutTC()}}>Выйти</button>}
+          {props.auth.email===null?'':<button onClick={()=>{props.logoutTC()}}>{currentLanguage.header.logout}</button>}
           </div >
           </div>
         </div>

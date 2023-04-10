@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import s from "./Avatar.module.css";
+import { Language } from "../../Common/Language/Language";
+
 
 let aboutMe='Обо мне:';
 let body;
-class Ava extends React.Component{
-  
+class Ava extends React.Component{ 
+ 
 state={
   editMode:true,
   statusText:'Твой первый комментарий'
@@ -22,10 +24,13 @@ componentDidUpdate(prevProps,prevState){
 }
 
   render(){
+    let currentLanguage;
+    (this.props.Language==='Russian'? currentLanguage=Language.Russian.Profile:currentLanguage=Language.English.Profile) 
     return (
+      
       <div>
         {this.props.Profile ===null ? (
-          <div>Undefined</div>
+          <div>{currentLanguage.unknownUser}</div>
         ) : (
           <div className={s.container}>
           <div>
@@ -36,17 +41,21 @@ componentDidUpdate(prevProps,prevState){
             
           </div>
             <div className={s.center}>
-              <div className={s.text}> {` Обо мне: ${
-                this.props.Profile.aboutMe === null ? "информация отсутствует" : this.props.Profile.aboutMe
+              <div className={s.text}> {`${currentLanguage.formData.aboutMe} ${
+                this.props.Profile.aboutMe === null ? currentLanguage.formData.emptyData: this.props.Profile.aboutMe
               }`}</div>
-              <div>{`Контактная информация : ${
+              <div>{`${currentLanguage.formData.contactData} ${
                 this.props.Profile.contacts === null
-                  ? "информация отсутствует"
+                  ? currentLanguage.formData.emptyData
                   : this.props.Profile.contacts.facebook
               }`}</div>
             </div>
             <div className={s.right}>
-              <div>{`Работа: ${this.props.Profile.lookingForAJob?'В поиске':(this.props.Profile.lookingForAJobDescription===null?'информация отсутствует':this.props.Profile.lookingForAJobDescription)}`}</div>
+              <div>{`${currentLanguage.formData.job}
+              ${this.props.Profile.lookingForAJob?
+              currentLanguage.formData.jobSearch:
+              (this.props.Profile.lookingForAJobDescription===null?
+              currentLanguage.formData.emptyData:this.props.Profile.lookingForAJobDescription)}`}</div>
             </div>
           </div>
         )}

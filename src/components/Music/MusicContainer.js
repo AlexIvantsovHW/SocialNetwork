@@ -3,6 +3,11 @@ import GetPlayList from "./GetPlaylist";
 import S from '../Style.module.css'
 import { CURRENT_TOKEN } from "./GetPlaylist";
 import s from './Style.module.css'
+import { getLang } from "../../selectors/selectors";
+import { connect } from "react-redux";
+import { Language } from "../Common/Language/Language";
+
+
 
 const SPOTIFY_AUTH_ENDPOINT='https://accounts.spotify.com/authorize';
 const CLIENT_ID='04db25ea8cb94578b52945855a8469ec';
@@ -28,7 +33,12 @@ const getReturnedParamFromSpotifyAuth=(hash)=>{
 }
 
 
-const MusicContainer=()=>{
+const MusicContainer=(props)=>{
+    let currentLanguage;
+    props.Language === "Russian"
+    ? (currentLanguage = Language.Russian.Music)
+    : (currentLanguage = Language.English.Music);
+
    useEffect(()=>{
         if (window.location.hash){
             const {access_token,
@@ -43,12 +53,13 @@ const MusicContainer=()=>{
     })
      return(
         <div className={S.container}>
-            <div className={s.button2}><button onClick={handleLogin}>Login</button></div>
+            <div className={s.button2}><button onClick={handleLogin}>{currentLanguage.login}</button></div>
             
-            <GetPlayList/>
+            <GetPlayList Language={props.Language}/>
         </div>
     )
 }
 
+const mapStateToProps=(state)=>{return{Language: getLang(state)}}
 
-export default MusicContainer;
+export default connect (mapStateToProps,{})(MusicContainer);

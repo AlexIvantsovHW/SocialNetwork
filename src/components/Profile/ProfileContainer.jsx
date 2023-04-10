@@ -5,7 +5,7 @@ import { setProfile,profileTC,setStatus,setAvaTC } from "../../redux/profile-red
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { statusTC } from './../../redux/profile-reducer';
 import { compose } from 'redux';
-import { getProfile, getStatus } from "../../selectors/selectors";
+import { getLang, getProfile, getStatus } from "../../selectors/selectors";
 
 
 
@@ -19,8 +19,7 @@ class ProfileAPI extends React.Component {
     this.props.statusTC(profileId);
     }
 
-    componentDidUpdate(prevProps,prevState,snapshot){
-      debugger;
+    componentDidUpdate(prevProps,prevState){
       if (this.props.Profile!== prevProps.Profile) {
         this.setState(this.props.Profile);
       }
@@ -28,7 +27,7 @@ class ProfileAPI extends React.Component {
     
   render() {
     return (<div><Profile {...this.props} Profile={this.props.Profile} 
-      status={this.props.status} updateStatus={this.props.setStatus}/></div>);}
+      status={this.props.status} Language={this.props.Language} updateStatus={this.props.setStatus} /></div>);}
 }
 
 export var withRouter=function (Component) {
@@ -42,7 +41,7 @@ export var withRouter=function (Component) {
 }
 ;
 
-const mapStateToProps = (state) => { return {Profile: getProfile(state),status:getStatus(state)};};
+const mapStateToProps = (state) => { return {Profile: getProfile(state),status:getStatus(state),Language: getLang(state)};};
 
 export default compose(withRouter,
   connect(mapStateToProps, { setProfile,profileTC,statusTC,setStatus, setAvaTC}),

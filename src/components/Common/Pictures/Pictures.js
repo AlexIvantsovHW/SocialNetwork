@@ -26,6 +26,6 @@ export let picture={
         leftArrow:'https://i.postimg.cc/c61rwtS8/l-Arrow-Light.png',
         rightArrow:'https://i.postimg.cc/RNNhbrqS/r-Arrow-Light.png',
         users:'https://i.postimg.cc/QFyTqR55/users-Light.png'
-
-    }
+    },
+    Flag:{Eng:'https://i.postimg.cc/94N3ft0K/Eng.png',Rus:'https://i.postimg.cc/MvYyRswc/Rus.png'}
 }

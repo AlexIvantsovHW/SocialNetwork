@@ -34,7 +34,7 @@ const profileReducer=(state=initialAction,action)=>{
         case UPC:return{...state,newPostText:action.post};
         case SET_PROFILE:return {...state,Profile:action.Profile};
         case SET_STATUS: return{...state,status:action.status};
-        case SET_AVA: debugger; return{...state,Profile:{...state.Profile,photos:action.photo}};
+        case SET_AVA: ; return{...state,Profile:{...state.Profile,photos:action.photo}};
    
         default: return state;
         }
@@ -46,7 +46,7 @@ export const setProfile=(Profile)=>{return({type:SET_PROFILE,Profile})}
 export const profileTC=(id)=>{return async (dispatch)=>{let data=await API.getProfile(id); dispatch(setProfile(data));}}
 export const statusTC=(id)=>{ return async (dispatch)=>{let data=await API.getStatus(id); dispatch(setStatus(data))}}
 export const setStatus=(status)=>{return({type:SET_STATUS,status:status})}
-export const setAva=(photo)=>{debugger;return({type:SET_AVA,photo})}
-export const setAvaTC=(photo)=>{debugger; return async (dispatch)=>{let response=await API.getAva(photo);debugger; dispatch(setAva(response.data.data.photos))}}
+export const setAva=(photo)=>{return({type:SET_AVA,photo})}
+export const setAvaTC=(photo)=>{return async (dispatch)=>{let response=await API.getAva(photo);dispatch(setAva(response.data.data.photos))}}
 
 export default profileReducer;

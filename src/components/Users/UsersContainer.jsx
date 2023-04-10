@@ -12,8 +12,11 @@ import React from "react";
 import Preloader from './Preloader/Preloader'
 import { compose } from 'redux';
 import {withAuthNavigate}  from "../HOC/withSignNavigate";
-import { getAuth, getLoadData, getPage, getPagesSize, getTotalUsers, getUsers } from './../../selectors/selectors';
+import { getAuth, getLang, getLoadData, getPage, getPagesSize, getTotalUsers, getUsers } from './../../selectors/selectors';
 import User from "./User";
+
+
+
 
 
 
@@ -38,6 +41,7 @@ class UsersAPIcomponent extends React.Component {
         onPostChange={this.onPostChange}
         follow={this.props.followAccept}
         unfollow={this.props.unfollowAccept}
+        Language={this.props.Language}
       />
       </>
     );
@@ -52,6 +56,7 @@ let mapToStateProps = (state) => {
     currentPage:getPage(state),
     loadingData:getLoadData(state),
     auth:getAuth(state),
+    Language: getLang(state)
 
   };
 };

@@ -2,16 +2,21 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import S from "../Style.module.css";
 import s from "./Style.module.css";
+import { Language } from "../Common/Language/Language";
 
-
-
-const playHandle='https://jccdallas.org/wp-content/uploads/2020/06/Spotify-Play-Button-1.png'
-const noname='https://cdn-icons-png.flaticon.com/512/1177/1177568.png'
+const playHandle =
+  "https://jccdallas.org/wp-content/uploads/2020/06/Spotify-Play-Button-1.png";
+const noname = "https://cdn-icons-png.flaticon.com/512/1177/1177568.png";
 
 const PLAY_LIST_ENDPOINT = "https://api.spotify.com/v1/me/playlists";
 export var CURRENT_TOKEN = localStorage.getItem("Access token");
+let currentLanguage;
 
-const GetPlayList = () => {
+const GetPlayList = (props) => {
+  debugger;
+props.Language === "Russian"
+  ? (currentLanguage = Language.Russian.Music)
+  : (currentLanguage = Language.English.Music);
   const [token, setToken] = useState("");
   const [data, setData] = useState({});
   const [searchKey, setSearchKey] = useState("");
@@ -38,26 +43,25 @@ const GetPlayList = () => {
     }
   }, []);
 
-  const renderArtist = () => {
+  const renderArtist = (props) => {
+
+
     return artists.map((artist) => (
       <div className={s.sub_container_lvl2}>
         <div className={s.image} key={artist.id}>
-          <img src={artist.images.length ?artist.images[2].url:noname}/>
+          <img src={artist.images.length ? artist.images[2].url : noname} />
         </div>
         <div className={s.name}>
           <div>
-          {artist.name}
-          <p>Followers {artist.followers.total}</p>
+            {artist.name}
+            <p>Followers {artist.followers.total}</p>
           </div>
-         
-          
-         
-           </div>
+        </div>
         <div className={s.url}>
-        <a href= {artist.external_urls.spotify}>
-        <img src={playHandle}/>
-         </a>
-          </div>
+          <a href={artist.external_urls.spotify}>
+            <img src={playHandle} />
+          </a>
+        </div>
       </div>
     ));
   };
@@ -70,23 +74,23 @@ const GetPlayList = () => {
             <div className={s.input}>
               <input
                 type="text"
-                placeholder="напиши имя певца"
+                placeholder={currentLanguage.artistName}
                 onChange={(e) => setSearchKey(e.target.value)}
               />
             </div>
             <div className={s.button}>
-              <button type={"submit"}>Поиск</button>
+              <button type={"submit"}>{currentLanguage.search}</button>
             </div>
           </div>
 
           {artists.length > 0 ? renderArtist() : null}
         </form>
       ) : (
-        <p>Please login</p>
+        <p>{currentLanguage.login}</p>
       )}
     </div>
   ) : (
-    <div> Please login</div>
+    <div> {currentLanguage.login}</div>
   );
 };
 export default GetPlayList;

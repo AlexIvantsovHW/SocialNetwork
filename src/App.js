@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import Nav from "./components/Nav/Nav";
+import NavСontainer from "./components/Nav/NavСontainer";
 import { Routes, Route } from "react-router-dom";
 import News from "./components/News/News";
 import MessageContainer from "./components/Dialog/MessageContainer";
@@ -16,10 +16,12 @@ import { withRouter } from "./components/Profile/ProfileContainer";
 import Preloader from "./components/Users/Preloader/Preloader";
 import MusicContainer from "./components/Music/MusicContainer";
 
+
 class App extends React.Component {
   componentDidMount() {
     this.props.initSuccess();
   }
+ 
   render() {
     if (!this.props.initcilization) {
       return <Preloader />;
@@ -27,7 +29,7 @@ class App extends React.Component {
     return (
       <div className="app-wrapper">
         <HeaderContainer />
-        <Nav />
+        <NavСontainer />
         <div className="app-wrapper-content">
           <Routes>
             <Route path="/profile/:id" element={<ProfileContainer />} />
@@ -37,7 +39,8 @@ class App extends React.Component {
             <Route path="/news" element={<News />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signIn" element={<SignInContainer />} />
-          </Routes>
+            {/* <Route path="/settings" element={<Settings />} />
+ */}          </Routes>
         </div>
       </div>
     );

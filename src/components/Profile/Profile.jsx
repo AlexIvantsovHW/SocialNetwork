@@ -6,7 +6,12 @@ import S from '../Style.module.css'
 const Profile = (props) => { 
     return (
     <div className={S.container}>
-      <ProfileInfo Profile={props.Profile} status={props.status} updateStatus={props.updateStatus} setAvaTC={props.setAvaTC}/>
+      <ProfileInfo
+        Profile={props.Profile}
+        status={props.status}
+        updateStatus={props.updateStatus}
+        setAvaTC={props.setAvaTC}
+        Language={props.Language}/>
       <PostContainer />
     </div>
   );
