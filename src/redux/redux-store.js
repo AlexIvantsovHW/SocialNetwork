@@ -8,6 +8,7 @@ import { reducer as formReducer } from 'redux-form'
 import signReducer from './sign-reducer';
 import initReducer from "./init-reducer";
 import settingReducer from './setting-reducer';
+import newsReducer from "./news-reducer";
 
 
 let reducers=combineReducers({
@@ -19,6 +20,7 @@ let reducers=combineReducers({
     form: formReducer,
     init:initReducer,
     setting:settingReducer,
+    news:newsReducer,
 })
 
 const store=createStore(reducers,applyMiddleware(thunk));

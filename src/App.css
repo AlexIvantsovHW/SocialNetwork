@@ -12,3 +12,11 @@
   margin-top: 10px;
   grid-area: p;
 }
+
+.main_phone{
+  background-color: aqua;
+  width: 90%;
+  margin-left:5%;
+  margin-top: 1%;
+  height: 500px;
+}

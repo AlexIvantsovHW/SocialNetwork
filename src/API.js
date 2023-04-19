@@ -15,6 +15,12 @@ const musicInstance = axios.create({
   }
 })
 
+
+const NewsInstance = {
+  method: 'GET',
+  baseURL: 'https://api.spaceflightnewsapi.net/v3/articles',
+};
+
 let captcha=false
 
 const API = {
@@ -44,7 +50,6 @@ const API = {
     });},
 
   login(email,password,rememberMe){
-    debugger;
     return instance
     .post(`/auth/login`,{email,password,rememberMe,captcha})},
    
@@ -60,14 +65,12 @@ logout(){
   
 
   getTracks(id) {
-    debugger;
     return musicInstance
     .get(id).then((response)=>{return response.data})
     
   },
 
   getAva(photo){
-    debugger;
     let formData=new FormData();
     formData.append('image',photo)
     return instance.put('/profile/photo',formData,{
@@ -75,8 +78,22 @@ logout(){
         'Content-Type':'multipart/form-data'
       }
     })
-  }
+  },
+
+  getNews(){
+    axios.get('https://api.spaceflightnewsapi.net/v3/articles').then((response) => {
+      return response.data===null?'empty status':response.data;
+    });
+  },
+
+getSong(){
+  axios.get('https://openwhyd.org/hot/electro?format=json').then((response)=>{return response.data})
+}
 };
 
 
 export default API;
+
+
+
+

@@ -21,7 +21,6 @@ const musicReducer = (state = initialState, action) => {
   }
 
 export const setMusic = (data) => {return { type: SET_TRACK, data }};
-/* export const musicTC=()=>{debugger; return (dispatch)=>{debugger; music_API.getTracks().then(function (response) {
-  console.log(response.data);})}} */
+
 
 export default musicReducer;

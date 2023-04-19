@@ -1,22 +1,46 @@
 import React from "react";
-import Style from './News.module.css';
-import Case from "./Case/Case";
+import s from "./News.module.css";
+import { Language } from "../Common/Language/Language";
 
 
-const News= (props)=>{   
-    let NewsList=[
-        {id:1, name:'Armagedon', description:'The world in the fire'},
-        {id:2, name:'War', description:'It was terrible time'},
-        {id:3, name:'Travelling', description:'A lot of people prefere to travel with their pets'},
-        {id:4, name:'Avalanche', description:'A terrible ancident was happened in the Everest mountain'},
-    ] 
+let newsElement;
+let currentLanguage;
 
-    let NewsElement=NewsList.map((el) =>(<Case name={el.name} description={el.description}/>)
+
+const News = (props) => {
+    props.Language === "Russian"
+    ? (currentLanguage = Language.Russian.News)
+    : (currentLanguage = Language.English.News);
+(props.news.title === undefined ?<div>пусто</div>:
+    (newsElement = props.news.title.map((el) =>{
+
+        return props.news.title === undefined ? (
+          <div>пусто</div>
+        ) : (
+         
+            <div className={s.subcontainer}>
+              <div className={s.lColumn}>
+              <div className={s.date}>
+                <a /* href={el.url} */><img src={el.imageUrl}/></a>
+            </div>
+              </div>
+              <div className={s.rColumn}>
+                <div className={s.title}><div><h3>{el.title}</h3></div> </div>
+                <div className={s.summary}><div><h4>{currentLanguage.Summary}</h4></div> {el.summary}</div>
+                <div className={s.date}><h4>{currentLanguage.UploadingData}</h4> {`${el.updatedAt}`}</div>
+              </div>
+            </div>
+       
+        )}))
     )
-    return(
-        <div>
-           {NewsElement}
-        </div>
-    )
-}
+  
+
+  return(
+    <div className={s.container}>
+        <div><p>{currentLanguage.News}</p></div>
+        <div>{newsElement}</div>
+        
+    </div>
+  )
+};
 export default News;
