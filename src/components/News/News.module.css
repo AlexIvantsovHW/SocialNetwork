@@ -1,12 +1,12 @@
 .container{
     display: grid;
     width: 90%;
-    margin: 0 50px 0 20px;
     height:fit-content;
     border:  rgb(103, 103, 103) solid;
     border-radius: 30px;
     border-width: 0.5px;
     background-color: rgb(70, 70, 70);
+    margin-left:5%;
 }
 .container p{
     font-size: 25px;
@@ -18,12 +18,12 @@
 .subcontainer{
     border: solid;
     width: 90%;
-    height:300px;
+    height:250px;
     border:  rgb(192, 192, 192) solid;
     border-radius: 30px;
     border-width: 0.5px;
     background-color: rgb(168, 165, 165);
-    margin-top: 1%;
+    margin-top: 2%;
     margin-left:5%;
 
     display: grid;
@@ -40,10 +40,12 @@ grid-template-columns: 1fr 3fr;
     justify-content: center;
     align-items: center;
     margin: 5%;
+    padding-left: 20px;
 }
 
 .rColumn{
     margin: 1%;
+    padding-left: 20px;
 }
 .subcontainer img{
     width: 200px;
@@ -63,53 +65,62 @@ grid-template-columns: 1fr 3fr;
 }
 
 @media (max-width:1280px) {
-    .subcontainer img{width: 150px; height: 150px;}
+    .subcontainer img{width: 200px; height: 200px;}
     .title h3{font-size: 20px;}
 }
 @media (max-width:1024px) {
-    .subcontainer img{ width: 110px;height: 110px;}
-    .title h3{font-size: 18px;}
-    .summary h4{font-size:15px;}
+    .subcontainer img{ width: 200px;height: 200px;}
+    .title h3{font-size: 15px;}
+    .summary h4{font-size:13px;}
     .summary{font-size:13px;}
-
-    .date h4{font-size: 15px;}
-    .date {font-size: 13px;}
 }
 @media (max-width:768px) {
-    .subcontainer img{width: 85px;height: 85px;}
-    .title h3{font-size: 16px;}
-    .summary h4{font-size:14px;}
+    .subcontainer {grid-template-columns: 1fr 1fr;}
+    .subcontainer img{width: 200px;height: 200px;}
+    .title h3{font-size: 14px;}
+    .summary h4{font-size:12px;}
     .summary{font-size:12px;}
-
-    .date h4{font-size: 14px;}
-    .date {font-size: 12px;}
 }
 
 @media (max-width:690px) {
-    .subcontainer img{width: 55px;height: 55px;}
-    .title h3{font-size: 14px;}
-    .summary h4{font-size:13px;}
+    .subcontainer {grid-template-columns: 1fr 1fr;}
+    .subcontainer img{width: 200px;height: 200px;}
+    .title h3{font-size: 13px;}
+    .summary h4{font-size:11px;}
     .summary{font-size:11px;}
-
-    .date h4{font-size: 13px;}
-    .date {font-size: 11px;}
 }
 
 @media (max-width:500px) {
-    .subcontainer img{width: 35px;height: 35px;}
+    .subcontainer {grid-template-columns: 1fr 1fr;}
+    .subcontainer img{width: 150px;height: 150px;}
     .title h3{font-size: 12px;}
-    .summary h4{font-size:11px;}
+    .summary h4{font-size:10px;}
     .summary{font-size:10px;}
-
-    .date h4{font-size: 11px;}
-    .date {font-size: 10px;}
 }
 
-@media (max-width:366px) {
-    .title h3{font-size: 10px;}
+@media (max-width:410px) {
+    .subcontainer {grid-template-columns: 0.8fr 1fr;}
+    .subcontainer img{width: 130px;height: 130px;}
+    .title h3{font-size: 11px;}
     .summary h4{font-size:9px;}
-    .summary{font-size:8px;}
+    .summary{font-size:9px;}
+}
 
-    .date h4{font-size: 9px;}
-    .date {font-size: 8px;}
+
+@media (max-width:366px) {
+    .subcontainer {grid-template-columns: 0.8fr 1fr;}
+    .subcontainer img{width: 130px;height: 130px;}
+
+    .title h3{font-size: 9px;}
+    .summary h4{font-size:9px;}
+    .summary{font-size:9px;}
+}
+
+@media (max-width:344px) {
+    .subcontainer {grid-template-columns: 0.8fr 1fr;}
+    .subcontainer img{width: 110px;height: 110px;}
+
+    .title h3{font-size: 8px;}
+    .summary h4{font-size:8px;}
+    .summary{font-size:8px;}
 }

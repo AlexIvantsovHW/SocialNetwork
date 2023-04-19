@@ -13,10 +13,17 @@
   grid-area: p;
 }
 
-.main_phone{
-  background-color: aqua;
-  width: 90%;
-  margin-left:5%;
-  margin-top: 1%;
-  height: 500px;
+
+@media (max-width:768px){
+  .app-wrapper{
+    grid-template-rows: 0.45fr 5fr 0.2fr;
+    grid-template-areas: 
+    "h h"
+    "p p"
+    "n n";
+  }
+
+  .app-wrapper-content{
+    margin-top: 0px;
+  }
 }

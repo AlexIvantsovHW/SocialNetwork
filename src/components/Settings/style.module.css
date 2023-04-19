@@ -1,0 +1,132 @@
+.containerLight{
+  grid-template-rows: 1fr 1fr 1fr;
+    display: grid;
+    width: 90%;
+    margin: 0 50px 0 20px;
+    border:  rgb(103, 103, 103) solid;
+    border-radius: 30px;
+    border-width: 0.5px;
+    background-color: rgb(238, 239, 246);
+    color: white;
+    height: max-content;
+}
+
+.container{
+  grid-template-rows: 1fr 1fr 1fr;
+    display: grid;
+    width: 90%;
+    margin: 0 50px 0 20px;
+    border:  rgb(103, 103, 103) solid;
+    border-radius: 30px;
+    border-width: 0.5px;
+    background-color: rgb(70, 70, 70);
+    height: max-content;
+}
+
+.container p{
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+}
+.subcontainer{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    height:100px;
+    margin: 10px 5% 10px 5%;   
+    width: 90%;
+    cursor: pointer;
+
+}
+.left{
+    height: 100%;
+    width: 80%;
+    cursor: pointer;
+}
+.right{
+    margin-left: 10px;
+    height: 100%;
+    width: 80%;
+    cursor: pointer;
+}
+
+
+
+.columnL{
+display: grid;
+grid-template-columns: 1fr 2fr;
+  }
+.columnL:hover{
+    filter:drop-shadow(0 0 5px rgba(4, 252, 194, 0.647));
+    transition: 400ms;
+}
+.columnR{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+      }
+    .columnR:hover{
+        filter:drop-shadow(0 0 5px rgb(8, 0, 255));
+        transition: 400ms;
+    }
+
+.lColumn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+  }
+.lColumn img{
+    width: 35px;
+    height: 35px;
+}
+  .rColumn{
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    height: 100%;
+    color: white;
+  } 
+
+
+  .Light{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(238, 239, 246);
+    height: 100%;
+    color: black;
+  }
+  .Light p{
+    font-size: 30px;
+    color:black;
+    font-weight: bold;
+  }
+
+  .Dark{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(38, 38, 38);
+    height: 100%;
+}
+.Dark p{
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+.Dark h1{
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.styleBottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.styleBottom button{
+  width: fit-content;
+}

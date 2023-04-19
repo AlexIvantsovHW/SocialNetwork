@@ -21,13 +21,13 @@ const News = (props) => {
             <div className={s.subcontainer}>
               <div className={s.lColumn}>
               <div className={s.date}>
-                <a /* href={el.url} */><img src={el.imageUrl}/></a>
+                <a href={el.url}><img src={el.imageUrl}/></a>
             </div>
               </div>
               <div className={s.rColumn}>
                 <div className={s.title}><div><h3>{el.title}</h3></div> </div>
                 <div className={s.summary}><div><h4>{currentLanguage.Summary}</h4></div> {el.summary}</div>
-                <div className={s.date}><h4>{currentLanguage.UploadingData}</h4> {`${el.updatedAt}`}</div>
+{/*                 <div className={s.date}><h4>{currentLanguage.UploadingData}</h4> {`${el.updatedAt}`}</div> */}
               </div>
             </div>
        
