@@ -2,23 +2,27 @@ import React, { useState } from "react";
 import s from "./Style.module.css";
 
 import { NavLink } from "react-router-dom";
-import { anonimPhoto} from "../Common/Pictures/Pictures.js";
-import { picture } from "../Common/Pictures/Pictures.js"; 
+import { anonimPhoto } from "../Common/Pictures/Pictures.js";
+import { picture } from "../Common/Pictures/Pictures.js";
 import { Language } from "../Common/Language/Language";
 
-
 const User = (props) => {
-  let currentLanguage; (props.Language==='Russian'? currentLanguage=Language.Russian.Users:currentLanguage=Language.English.Users)
+  let currentLanguage;
+  props.Language === "Russian"
+    ? (currentLanguage = Language.Russian.Users)
+    : (currentLanguage = Language.English.Users);
   let pagesCount = Math.ceil(props.totalUsers / props.pageSize);
-  let portionSize=10;
-  let portionCount=Math.ceil(pagesCount/portionSize);
+  let portionSize = 10;
+  let portionCount = Math.ceil(pagesCount / portionSize);
 
-let [portionNumber,setPortionNumber]=useState(1);
-let leftPortionBoundary=(portionNumber-1)*portionSize+1;
-let rightPortionBoundary=portionNumber*portionSize;
+  let [portionNumber, setPortionNumber] = useState(1);
+  let leftPortionBoundary = (portionNumber - 1) * portionSize + 1;
+  let rightPortionBoundary = portionNumber * portionSize;
 
   let dispayPages = [];
-  for (let i = 1; i <= pagesCount; i++) {dispayPages.push(i);}
+  for (let i = 1; i <= pagesCount; i++) {
+    dispayPages.push(i);
+  }
 
   let userElement = props.UserPage.users.map((el) => {
     return (
@@ -60,23 +64,46 @@ let rightPortionBoundary=portionNumber*portionSize;
     <div className={s.container}>
       <div className={s.top}>{currentLanguage.User}</div>
       <div>
-<div className={s.pageString}>
-        {portionNumber>1 && <div className={s.arrow}><img src={picture.light.leftArrow} onClick={()=>{setPortionNumber(portionNumber-1)}}/></div>}
-       <div>
-        {dispayPages.filter((p)=>p>=leftPortionBoundary&&p<=rightPortionBoundary).map((p) => {
-          return (
-            <span
-              className={s.pageActive}
-              onClick={(e) => props.onPostChange(p)}
-            >
-              {" "}
-              {p}{" "}
-            </span>
-          );
-        })}
+        <div className={s.pageString}>
+          {portionNumber > 1 && (
+            <div className={s.arrow}>
+              <img
+                src={picture.light.leftArrow}
+                onClick={() => {
+                  setPortionNumber(portionNumber - 1);
+                }}
+              />
+            </div>
+          )}
+          <div>
+            {dispayPages
+              .filter(
+                (p) => p >= leftPortionBoundary && p <= rightPortionBoundary
+              )
+              .map((p) => {
+                return (
+                  <span
+                    className={s.pageActive}
+                    onClick={(e) => props.onPostChange(p)}
+                  >
+                    {" "}
+                    {p}{" "}
+                  </span>
+                );
+              })}
+          </div>
+          {portionCount > portionNumber && (
+            <div className={s.arrow}>
+              <img
+                src={picture.light.rightArrow}
+                className={s.arrow}
+                onClick={() => {
+                  setPortionNumber(portionNumber + 1);
+                }}
+              />
+            </div>
+          )}
         </div>
-           {portionCount> portionNumber && <div className={s.arrow}><img src={picture.light.rightArrow}className={s.arrow} onClick={()=>{setPortionNumber(portionNumber+1)}}/></div>}
-      </div>
       </div>
 
       {userElement}

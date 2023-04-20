@@ -1,12 +1,14 @@
+import { anonimPhoto } from './../components/Common/Pictures';
+
 const UP_MessageNewBody='UP_MessageNewBody';
 const SEND_MESSAGE='SEND_MESSAGE';
 
 let initialAction={
         messageList: [
-          { name: "Alex", post: "how are you?" },
-          { name: "Inna", post: "fine" },
-          { name: "Alina", post: "thx" },
-          { name: "Jastin", post: "and u?" },
+          { name: "Alex", post: "how are you?", avatar:anonimPhoto },
+          { name: "Inna", post: "fine",avatar:anonimPhoto  },
+          { name: "Alina", post: "thx",avatar:anonimPhoto  },
+          { name: "Jastin", post: "and u?",avatar:anonimPhoto  },
         ],
     }
 
@@ -21,9 +23,10 @@ const dialogReducer=(state=initialAction,action)=>{
 
         case SEND_MESSAGE:{
             let body=action.message;
+            let Name=action.name;
             return{
                 ...state,
-                messageList:[...state.messageList,{ name: "Alex", post:body }],
+                messageList:[...state.messageList,{name:Name, post:body }],
             }    
         }        
             default: return state;
@@ -31,6 +34,6 @@ const dialogReducer=(state=initialAction,action)=>{
 }
 
 
-export const SendMessageCreator=(message)=>{return({type:SEND_MESSAGE,message})}
-export const UP_MessageNewBodyCreator =(body)=>{return ({type:UP_MessageNewBody,body:body})}
+export const SendMessageCreator=(name,message)=>{return({type:SEND_MESSAGE,name,message})}
+export const UP_MessageNewBodyCreator =(name,body)=>{return ({type:UP_MessageNewBody,name,body})}
 export default dialogReducer;

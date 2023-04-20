@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./../Header/Header.module.css";
-import { Link, Navigate, NavLink } from "react-router-dom";
+import { Link,  NavLink } from "react-router-dom";
 import { Language } from "../Common/Language/Language";
 
 
@@ -8,8 +8,6 @@ import { Language } from "../Common/Language/Language";
 
 let image='https://static.vecteezy.com/system/resources/previews/009/380/774/original/planet-clipart-design-illustration-free-png.png';
 const Header = (props) => {
-PersonaId=props.auth.id;
-
 let LogOUT=(props)=>{return (props.logoutTC)}
 let loginSource='https://social-network.samuraijs.com/login';
 let currentLanguage; (props.Language==='Russian'? currentLanguage=Language.Russian:currentLanguage=Language.English)
@@ -48,4 +46,5 @@ return (
 };
 export default Header;
 export var PersonaId;
+export var PersonalLogin;
 

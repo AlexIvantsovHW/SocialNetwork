@@ -1,4 +1,3 @@
-import Users from "./Users";
 import { connect } from "react-redux";
 import {
   followAccept,

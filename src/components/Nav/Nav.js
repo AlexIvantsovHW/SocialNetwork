@@ -51,7 +51,7 @@ const Nav =(props)=>{
               <div className={s.rColumn}><p>{currentLanguage.navbar.Music}</p></div>
             </div>
         </Link>
-        <div className={s.column}><p>{currentLanguage.navbar.CL}</p></div>
+        
         <div className={s.column}>
         <div className={s.lColumn}> <img src={picture.Flag.Eng} /></div>
           <div className={s.rColumn}><p onClick={activateEnglish}>English</p></div> 

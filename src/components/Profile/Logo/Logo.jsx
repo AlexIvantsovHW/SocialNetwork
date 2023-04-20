@@ -3,11 +3,9 @@ import s from '../Logo/Logo.module.css'
 import { PersonaId } from "../../Header/Header";
 
 const Logo = (props) => {
-  debugger;
   let anonimPhoto = "https://cdn-icons-png.flaticon.com/512/1177/1177568.png";
   let Unknown='Unknown'
 let onChangePhoto=(e)=>{
-debugger;
   if(e.target.files.length){props.setAvaTC(e.target.files[0])}  
 }
 
