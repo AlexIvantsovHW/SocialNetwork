@@ -3,9 +3,8 @@ import Message from "./Message";
 import { connect } from 'react-redux';
 import { compose } from "redux";
 import { withAuthNavigate } from "../HOC/withSignNavigate";
-import { getAuth, getDialogs, getLang, getProfile } from "../../selectors/selectors";
+import { getAuth, getDialogs, getLang} from "../../selectors/selectors";
 import React from "react";
-import Profile from './../Profile/Profile';
 
 
 

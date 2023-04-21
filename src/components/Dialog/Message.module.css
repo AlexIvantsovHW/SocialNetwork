@@ -1,13 +1,12 @@
 .dialogContainer{
-display: grid;  
-grid-template-rows: 1fr 1fr;
 border: rgb(103, 103, 103) solid;
 border-radius: 30px;
 border-width: 0.5px;
 background-color: rgb(70, 70, 70);
 width: 90%;
 margin-left: 5%;
-height: fit-content;
+margin-bottom: 10%;
+height: max-content;
 }
 
 
@@ -15,15 +14,16 @@ height: fit-content;
     display: grid;
     grid-template-columns: 0.5fr 1fr;
     margin-top: 2%;
+    height: fit-content;
 }
-.left{width: fit-content;}
-.right{width: fit-content;}
+.left{width: 100%;}
+.right{width: 100%;}
 
 .userContainer{
     margin: 15px 10px 10px 15px;
     display: grid;
     background-color: rgba(224, 218, 218, 0.138);
-    width: 300px;
+    width: 90%;
     height:50px;
     grid-template-columns: 1fr 4fr;
     border: solid rgb(130, 130, 130);
@@ -43,13 +43,8 @@ height: fit-content;
     border-color: gray;
     border-width: 0.5px;
 }
-.userAva img{
-      width: 30px;
-    height:30px;
-}
-.userAva:hover{
-background-color: rgba(0, 0, 255, 0.2);
-}
+.userAva img{width: 30px;height:30px;}
+.userAva:hover{background-color: rgba(0, 0, 255, 0.2);}
 
 .userName{
     margin: auto;
@@ -65,22 +60,23 @@ background-color: rgba(0, 0, 255, 0.2);
     margin: 15px 10px 10px 15px;
     padding-left: 10px;
     background-color: rgba(209, 210, 210, 0.681);
-    width: 100vh;
+    width: 90%;
     height:50px;
     border-radius: 10px;
     border: solid rgb(130, 130, 130);
     border-width: 0.5px;
-    font-size: 15px;
+    font-size: 23px;
 
 }
 .bottom textarea{
     margin-top: 3%;
     margin-bottom: 3%;
     margin-left: 2.5%;
-    width: 95%;
+    width: 90%;
     height: fit-content;
     border: solid gray 0.5px;
     background-color: white;
+    font-size: 23px;
 
 }
 .bottom textarea:active{
@@ -88,5 +84,145 @@ background-color: rgba(0, 0, 255, 0.2);
     border: solid gray 0.5px;
 }
 
-.button{margin-left:2.5%;}
+.button {margin-left:2.5%;}
 .bottom_subcontainer{height: fit-content;}
+
+
+@media (max-width:1280px) {
+.userMessage{
+    margin: 15px 10px 10px 15px;
+    padding-left: 10px;
+    height:50px;
+    font-size: 25px;
+}
+.userName{font-size: 25px;}
+.dialogContainer{margin-top:10px;}
+textarea::placeholder {padding: 2% 0 0 5%;font-size: 25px;opacity: 0.5;}
+
+    .bottom_subcontainer button{ 
+        margin: 0 0 3% 5%;
+        font-size: 25px;
+        width: 190px;
+        height: 70px;
+    }
+    .bottom_subcontainer button:hover{font-size: 25px;}
+    .userAva img{width: 50px;height:50px;}
+    .userAva{width: 50px;height:50px;}
+
+  }
+  @media (max-width:1024px) {
+    .userMessage{height:40px;font-size: 25px;}
+    .userContainer{height:40px;}
+    .userName{font-size: 25px;}
+    .dialogContainer{margin-top:20px; margin-bottom: 20px;}
+
+    textarea::placeholder {padding: 2% 0 0 5%;font-size: 20px;opacity: 0.5;}
+
+    .bottom_subcontainer button{ 
+        margin: 0 0 3% 5%;
+        font-size: 25px;
+        width: 180px;
+        height: 60px;
+    }
+    .bottom_subcontainer button:hover{font-size: 25px;}
+    .userAva img{width: 40px;height:40px;}
+    .userAva{width: 40px;height:40px;}
+
+  }
+  @media (max-width:768px) {
+    .userMessage{height:30px;font-size: 18px;}
+    .userContainer{height:30px;}
+    .userName{font-size: 18px;}
+    .dialogContainer{margin-top:150px; margin-bottom:80px;}
+
+
+    textarea::placeholder {padding: 2% 0 0 5%;font-size: 18px;opacity: 0.5;}
+
+    .bottom_subcontainer button{ 
+        margin: 0 0 3% 5%;
+        font-size: 18px;
+        width: 170px;
+        height: 50px;
+    }
+    .bottom_subcontainer button:hover{font-size: 18px;}
+    .userAva img{width: 30px;height:30px;}
+    .userAva{width: 30px;height:30px;}
+  }
+  
+  @media (max-width:690px) {
+    .userMessage{height:25px;font-size: 15px;}
+    .userContainer{height:25px;}
+    .userName{font-size: 15px;}
+    .dialogContainer{margin-top:150px; margin-bottom:80px;}
+
+    textarea::placeholder {padding: 2% 0 0 5%;font-size: 15px;opacity: 0.5;}
+
+    .bottom_subcontainer button{ 
+        margin: 0 0 3% 5%;
+        font-size: 15px;
+        width: 150px;
+        height: 40px;
+    }
+    .bottom_subcontainer button:hover{font-size: 15px;}
+    .userAva img{width: 25px;height:25px;}
+    .userAva{width: 25px;height:25px;}
+  }
+  
+  @media (max-width:500px) {
+
+    .userMessage{width:80%;height:20px;font-size: 12px;}
+    .userContainer{height:20px;}
+    .userName{font-size: 12px;}
+    .dialogContainer{margin-top:150px; margin-bottom:80px;}
+
+    textarea::placeholder {padding: 2% 0 0 5%;font-size: 12px;opacity: 0.5;}
+
+    .bottom_subcontainer button{ 
+        margin: 0 0 3% 5%;
+        font-size: 12px;
+        width: 130px;
+        height: 30px;
+    }
+    .bottom_subcontainer button:hover{font-size: 12px;}
+    .userAva img{width: 19px;height:19px;}
+    .userAva{width: 19px;height:19px;}
+  }
+  
+  @media (max-width:366px) {
+    .userMessage{height:20px;font-size: 10px;}
+    .userContainer{height:20px;}
+    .userName{font-size: 10px;}
+    .dialogContainer{margin-top:150px; margin-bottom:80px;}
+    .subcontainer{height: fit-content;}
+
+    textarea::placeholder {padding: 2% 0 0 5%;font-size: 10px;opacity: 0.5;}
+
+    .bottom_subcontainer button{ 
+        margin: 0 0 3% 5%;
+        font-size: 10px;
+        width: 120px;
+        height: 20px;
+    }
+    .bottom_subcontainer button:hover{font-size: 15px;}
+    .userAva img{width: 18px;height:18px;}
+    .userAva{width: 18px;height:18px;}
+  }
+  
+@media (max-width:344px) {
+    .userMessage{height:20px;font-size: 9px;}
+    .userContainer{height:20px;}
+    .userName{font-size: 9px;}
+    .dialogContainer{margin-top:150px; margin-bottom:80px;}
+
+    .subcontainer{height: fit-content;}
+    textarea::placeholder {padding: 2% 0 0 5%;font-size: 9px;opacity: 0.5;}
+
+    .bottom_subcontainer {height: 100%;}
+    .bottom_subcontainer button{ 
+        font-size: 10px;
+        width: 120px;
+    }
+    .bottom_subcontainer button:hover{font-size: 9px;}
+    .userAva img{width: 18px;height:18px;}
+    .userAva{width: 18px;height:18px;}
+}
