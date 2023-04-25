@@ -1,7 +1,9 @@
-.container{
+.Container{ 
     display: grid;
+    grid-template-rows: 0.5fr 0.5fr;
+    margin-left: 5%;
+    margin-bottom: 50px;
     width: 90%;
-    margin: 0 50px 0 20px;
     height:fit-content;
     border:  rgb(103, 103, 103) solid;
     border-radius: 30px;
@@ -20,20 +22,8 @@ button{
     font-size: 20px;
 }
 button:hover{
-    background-color: rgb(70, 70, 70);
-    border-width: 2px;
-    border-top: solid rgb(70, 70, 70);
+    border-width: 1px;
     border-bottom: solid  rgb(70, 70, 70);
     color: rgba(0, 255, 34);
     transition: 400ms;
-    font-size: 20px;
-}
-
-.sub_container_lvl1{
-    margin-top:20px;
-    width: 90%;
-    margin-left: 5%;
-    background-color: rgb(70, 70, 70);
-    display: grid;
-    height: fit-content;
 }

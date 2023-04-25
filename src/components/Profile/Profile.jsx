@@ -5,7 +5,7 @@ import S from '../Style.module.css'
 
 const Profile = (props) => { 
     return (
-    <div className={S.container}>
+    <div className={S.Container}>
       <ProfileInfo
         Profile={props.Profile}
         status={props.status}

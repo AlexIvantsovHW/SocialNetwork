@@ -24,9 +24,10 @@ const profileReducer=(state=initialAction,action)=>{
           
         case ADD_POST:
             let body=action.post;
+            let Name=action.name
             return{
                 ...state,
-                userList:[...state.userList,{ id: 5, name: 'Alexander', message: body}],
+                userList:[...state.userList,{ id: 5, name: Name, message: body}],
             newPostText:''
             }
  
@@ -40,10 +41,10 @@ const profileReducer=(state=initialAction,action)=>{
         }
     }
 
-export const addPostActionCreator=(post)=>{return({type:ADD_POST,post})}
-export const UpdatePostChangeActionCreator=(post)=>{return({type:UPC,post:post})}
+export const addPostActionCreator=(name,post)=>{return({type:ADD_POST,name,post})}
+export const UpdatePostChangeActionCreator=(name,post)=>{return({type:UPC,name,post:post})}
 export const setProfile=(Profile)=>{return({type:SET_PROFILE,Profile})}
-export const profileTC=(id)=>{return async (dispatch)=>{let data=await API.getProfile(id); debugger; dispatch(setProfile(data));}}
+export const profileTC=(id)=>{return async (dispatch)=>{let data=await API.getProfile(id);dispatch(setProfile(data));}}
 export const statusTC=(id)=>{ return async (dispatch)=>{let data=await API.getStatus(id); dispatch(setStatus(data))}}
 export const setStatus=(status)=>{return({type:SET_STATUS,status:status})}
 export const setAva=(photo)=>{return({type:SET_AVA,photo})}

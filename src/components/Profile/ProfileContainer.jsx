@@ -26,8 +26,8 @@ class ProfileAPI extends React.Component {
     }
     
   render() {
-    return (<div><Profile {...this.props} Profile={this.props.Profile} 
-      status={this.props.status} Language={this.props.Language} updateStatus={this.props.setStatus} /></div>);}
+    return (<Profile {...this.props} Profile={this.props.Profile} 
+      status={this.props.status} Language={this.props.Language} updateStatus={this.props.setStatus} />);}
 }
 
 export var withRouter=function (Component) {

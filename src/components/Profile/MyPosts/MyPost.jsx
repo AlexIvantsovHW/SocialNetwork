@@ -6,10 +6,8 @@ let Users = (props) => {
   return (
     <div className={s.userContainer}>
       <div className={s.subUserContainer}>
-        <div className={s.userImg}>
-          <img src={pathImg} />
-        </div>
-        <div className={s.userName}>{props.name}</div>
+        <div className={s.userImg}><img src={pathImg}/> {props.name}</div>
+        
       </div>
       <div className={s.postContainer}>{props.message}</div>
     </div>
@@ -23,9 +21,7 @@ const MyPosts = (props) => {
   ));
   return (
     <div className={s.container}>
-      <div className={s.userContainer}>
         <div>{userElement}</div>
-      </div>
     </div>
   );
 };

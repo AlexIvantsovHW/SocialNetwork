@@ -1,11 +1,50 @@
 .container{
+     
     display: grid;
     margin-left: 5%;
     width: 90%;
-    height: 220px;
-    border-bottom: solid gray;;
+    
+    height: fit-content;
+    border-bottom: solid gray;
     border-width: 0.5px;
-    color:black;
+    color:White;
     font-size: 20px;
- 
+    
 }
+button { height: fit-content; margin-bottom: 1%;}
+button:hover{
+    border-width: 0.5px;
+    border-bottom: solid  rgb(70, 70, 70);
+    color: rgba(0, 255, 34);
+    transition: 400ms;
+}
+@media (max-width:768px){
+    .container{font-size: 18px;}
+    button {font-size: 18px; margin-top: 1%;}
+  }
+  
+  @media (max-width:690px) {
+    .container{font-size: 16px;}
+    button {font-size: 16px;}
+
+  }
+  
+  @media (max-width:500px) {
+    .container{font-size: 14px;}
+    button {font-size: 14px;}
+  }
+  
+  @media (max-width:410px) {
+    .container{font-size: 12px;}
+    button {font-size: 12px;}
+  }
+  
+  
+  @media (max-width:366px) {
+    .container{font-size: 10px;}
+    button {font-size: 10px;}
+  }
+  
+  @media (max-width:344px) {
+    .container{font-size: 10px;}
+  }

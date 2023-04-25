@@ -2,7 +2,7 @@ import {
   UpdatePostChangeActionCreator,
   addPostActionCreator,
 } from "../../../redux/profile-reducer";
-import { getLang } from "../../../selectors/selectors";
+import { getLang, getProfile } from "../../../selectors/selectors";
 import NewPost from "./NewPost";
 import { connect } from "react-redux";
 
@@ -12,13 +12,14 @@ let mapStateToProps = (state) => {
     state: state.profilePage,
     auth:state.auth, 
     Language: getLang(state),
+    Profile:getProfile(state),
   }
 };
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    addPost: (post) => {dispatch(addPostActionCreator(post));},
-    onPostChange: (post) => {dispatch(UpdatePostChangeActionCreator(post));
+    addPost: (name,post) => {dispatch(addPostActionCreator(name,post));},
+    onPostChange: (name,post) => {dispatch(UpdatePostChangeActionCreator(name,post));
     },
   };
 };

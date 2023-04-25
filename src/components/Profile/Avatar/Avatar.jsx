@@ -3,13 +3,11 @@ import s from "./Avatar.module.css";
 import { Language } from "../../Common/Language/Language";
 
 
-let aboutMe='Обо мне:';
 let body;
 class Ava extends React.Component{ 
  
 state={
   editMode:true,
-  statusText:'Твой первый комментарий'
 }
 activateMode=()=>{this.setState({editMode:true})}
 diactivateMode=()=>{this.setState({editMode:false})}
@@ -30,17 +28,15 @@ componentDidUpdate(prevProps,prevState){
       
       <div>
         {this.props.Profile ===null ? (
-          <div>{currentLanguage.unknownUser}</div>
+         null
         ) : (
           <div className={s.container}>
-          <div>
+          <div className={s.subcontainer}>
             {this.state.editMode===true?(<div><span onClick={this.diactivateMode.bind(this)}>
               {!this.props.status?this.state.statusText:this.props.status}
               </span></div>):(<div><input autoFocus onBlur={this.activateMode.bind(this)} value={this.props.status} onChange={this.changeStatus}/></div>)}
             
             
-          </div>
-            <div className={s.center}>
               <div className={s.text}> {`${currentLanguage.formData.aboutMe} ${
                 this.props.Profile.aboutMe === null ? currentLanguage.formData.emptyData: this.props.Profile.aboutMe
               }`}</div>
@@ -49,8 +45,7 @@ componentDidUpdate(prevProps,prevState){
                   ? currentLanguage.formData.emptyData
                   : this.props.Profile.contacts.facebook
               }`}</div>
-            </div>
-            <div className={s.right}>
+            
               <div>{`${currentLanguage.formData.job}
               ${this.props.Profile.lookingForAJob?
               currentLanguage.formData.jobSearch:

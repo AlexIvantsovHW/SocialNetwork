@@ -13,7 +13,7 @@ const PostForm = (props) => {
     : (currentLanguage = Language.English.Profile.PostData);
   return (
     <form onSubmit={props.handleSubmit}>
-      <div>
+      <div className={s.subcontainer}>
         <Field
           name={"post"}
           component={Textarea}
@@ -36,8 +36,8 @@ const NewPost = (props) => {
     : (currentLanguage = Language.English.Profile.PostData);
   let onSubmit = (values) => {
     let post = values.post;
-    props.addPost(post);
-    props.onPostChange(post);
+    props.addPost(props.auth.login,post);
+    props.onPostChange(props.auth.login,post);
   };
   return (
     <div className={s.container}>

@@ -1,6 +1,6 @@
 .nav{
   margin-top: 10px;
-  margin-right: 10px;
+  padding-left: 10px;
   grid-area: n;
   background-color: rgb(38, 38, 38);
   z-index: 10;
@@ -61,7 +61,6 @@ nav img{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    padding-left: 5%;
     padding-top: 1%;
     border-top:solid 0.2px gray;
   }  

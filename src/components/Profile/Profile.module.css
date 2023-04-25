@@ -1,12 +1,4 @@
-.container{
-  margin-left: 80px;
-  display: grid;
-  width: 92%;
-  height: 100vh;
-  border: solid;
-  border-radius: 30px;
-  border-color: rgb(103, 103, 103);
-  border-width: 0.5px;
-  background-color: rgb(70, 70, 70);
-  
+.subcontainer{ 
+display: grid;
+grid-template-rows: 0.4fr 0.2fr 0.4fr;
 }
