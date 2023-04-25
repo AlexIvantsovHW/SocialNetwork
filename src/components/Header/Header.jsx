@@ -2,20 +2,18 @@ import React from "react";
 import s from "./../Header/Header.module.css";
 import { Link,  NavLink } from "react-router-dom";
 import { Language } from "../Common/Language/Language";
+import {planet } from "../Common/Pictures/Pictures";
 
 
-
-
-let image='https://static.vecteezy.com/system/resources/previews/009/380/774/original/planet-clipart-design-illustration-free-png.png';
 const Header = (props) => {
 let LogOUT=(props)=>{return (props.logoutTC)}
-let loginSource='https://social-network.samuraijs.com/login';
+
 let currentLanguage; (props.Language==='Russian'? currentLanguage=Language.Russian:currentLanguage=Language.English)
 return (
     <div className={s.container}>
       <div className={s.sub_container}>
         <div className={s.header}>
-        <NavLink to={`/profile/${props.auth.id}`}><img src={image}/></NavLink>
+        <NavLink to={`/profile/${props.auth.id}`}><img src={planet}/></NavLink>
           
         </div>
         <div className={s.center}>

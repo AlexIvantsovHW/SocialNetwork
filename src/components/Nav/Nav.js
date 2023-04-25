@@ -18,7 +18,7 @@ const Nav =(props)=>{
    
     return(
         <nav className={s.nav}>
-        <NavLink to={`/profile/${PersonaId}`}>
+        <NavLink to={`/profile/${props.auth.id}`}>
         <div className={s.column}>
               <div className={s.lColumn}> <img src={picture.light.profile} /></div>
               <div className={s.rColumn}><p>{currentLanguage.navbar.Profile}</p></div>

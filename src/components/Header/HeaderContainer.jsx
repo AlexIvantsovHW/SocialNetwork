@@ -9,6 +9,14 @@ import { getLang, getProfile } from "../../selectors/selectors";
 
 
 class HeaderAPI extends React.Component {
+
+   componentDidUpdate(prevProps,prevState){
+     if (this.props.auth!== prevProps.auth) {
+       this.setState(this.props.auth);
+     }
+   }
+
+
   componentDidMount() {this.props.authTC()}
   render() {return(<Header {...this.props}/>)}
 }

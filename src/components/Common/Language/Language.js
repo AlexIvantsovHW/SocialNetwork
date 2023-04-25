@@ -26,7 +26,7 @@ English:{
 },
 Russian:{
     navbar:{Profile:'Мой профиль',Message:'Сообщения',Users:'Пользователи',News:'Новости',Music:'Музыка',Settings:'Настройки',CL:'Язык'},
-    header:{Login:'Войти',logout:'Выйти'},
+    header:{login:'Войти',logout:'Выйти'},
     login:{
         UpText:'Добро пожаловать',MidText:'Для входа в Virtual world введите Вашу почту и пароль',
         createAccount:'Создать профиль',

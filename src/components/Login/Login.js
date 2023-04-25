@@ -19,7 +19,6 @@ let Maxlen=maxLenghtCreator(30);
 let Conditions=[required,Maxlen]
 
 const LoginForm = (props) => {
-  debugger;
   return (
     <div className={s.middle}>
       <form onSubmit={props.handleSubmit}>
@@ -45,7 +44,6 @@ const LoginForm = (props) => {
 const LoginReduxForm = reduxForm({ form: "login" })(LoginForm);
 
 const Login = (props) => {
-  debugger;
   const onSubmit=(formData)=>{props.loginTC(formData.email,formData.password,formData.rememberMe)} 
   (props.Language==='Russian'? currentLanguage=Language.Russian.login:currentLanguage=Language.English.login)
  
@@ -58,7 +56,7 @@ const Login = (props) => {
         </div>
         <LoginReduxForm onSubmit={onSubmit}/>
         <div className={s.bottom}>
-      <Link to='/signIn'><button>{currentLanguage.createAccount}</button></Link>
+  <button ><a href={'https://social-network.samuraijs.com/signUp'}>{currentLanguage.createAccount}</a></button>
       </div>
       </div>
   

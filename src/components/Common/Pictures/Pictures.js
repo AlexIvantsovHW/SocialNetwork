@@ -1,5 +1,5 @@
 export let anonimPhoto= "https://cdn-icons-png.flaticon.com/512/1177/1177568.png";
-
+export let planet='https://static.vecteezy.com/system/resources/previews/009/380/774/original/planet-clipart-design-illustration-free-png.png';
 export let picture={
     Dark:{
         news:'https://i.postimg.cc/Ls0MZ7Tm/file-invoice.png',
@@ -28,4 +28,5 @@ export let picture={
         users:'https://i.postimg.cc/QFyTqR55/users-Light.png'
     },
     Flag:{Eng:'https://i.postimg.cc/94N3ft0K/Eng.png',Rus:'https://i.postimg.cc/MvYyRswc/Rus.png'}
+
 }

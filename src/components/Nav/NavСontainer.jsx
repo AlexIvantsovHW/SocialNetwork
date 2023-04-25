@@ -13,13 +13,14 @@ class NavСontainer extends React.Component {
 
   render() {
     return (
-     <Nav Language={this.props.Language} LanguageAC={this.props.LanguageAC} />
+     <Nav auth={this.props.auth}Language={this.props.Language} LanguageAC={this.props.LanguageAC} />
     );
   }
 }
 
 let mapStateToProps=(state)=>{
   return{
+    auth:state.auth,
     Language: getLang(state),
   }
 }
