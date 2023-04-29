@@ -20,31 +20,32 @@ button:hover{
 }
 @media (max-width:768px){
     .container{font-size: 18px;}
-    button {font-size: 18px; margin-top: 1%;}
+    .button button {font-size: 18px; margin-top: 1%;}
   }
   
   @media (max-width:690px) {
-    .container{font-size: 16px;}
-    button {font-size: 16px;}
+    .container{font-size: var(--font-size-690);}
+    .button button {font-size: var(--font-size-690);}
 
   }
   
   @media (max-width:500px) {
-    .container{font-size: 14px;}
-    button {font-size: 14px;}
+    .container{font-size: var(--font-size-490);}
+    .button button{font-size: var(--font-size-490);}
   }
   
   @media (max-width:410px) {
-    .container{font-size: 12px;}
-    button {font-size: 12px;}
+    .container{font-size: var(--font-size-390);}
+    .button button{font-size: var(--font-size-390);}
   }
   
   
   @media (max-width:366px) {
-    .container{font-size: 10px;}
-    button {font-size: 10px;}
+    .container{font-size: var(--font-size-390);}
+    .button button{font-size: var(--font-size-390);}
   }
   
   @media (max-width:344px) {
-    .container{font-size: 10px;}
+    .container{font-size: var(--font-size-390);}
+    .button button{font-size: var(--font-size-390);}
   }

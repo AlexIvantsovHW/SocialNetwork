@@ -1,4 +1,5 @@
 .subcontainer{
+margin: auto;
     display: grid;
     grid-template-rows: 0.5fr 1.5fr 0.5fr;
     width: 90%;
@@ -9,24 +10,28 @@
     display: grid;
     grid-template-rows: 1fr 0.5fr;
     height: 150px;
+    text-align: center;
     border-bottom: solid;
     border-color: rgb(103, 103, 103);
     border-width: 0.5px;
-    
-    
+
 }
 .top_1{
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     height: 100px;
+    width: 100%;
     font-size: 35px;
     font-weight: bold;
+        width: 100%;
 }
 .top_2{
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     font-weight: bold;
     height: 50px;
     font-size: 15px;
@@ -77,31 +82,60 @@ button:hover{
     .subcontainer{margin-left: 5%;}
 }
 @media (max-width:768px) {
-    .subcontainer{margin-top: 120px;}
-    .top_1{height: 80px;font-size: 30px;}
-    .top_2{height: 40px;font-size: 14px;}
+    .subcontainer{margin-top: 170px;}
+    .top_1{height: 50px;font-size: var(--font-size-890)}
+    .top_2{height: 20px;font-size: var(--font-size-768)}
+    button {width: 130px;font-size: var(--font-size-768)}
+    button:hover {width: 130px;font-size: var(--font-size-768)}
+    .bottom button {width: 130px;font-size: var(--font-size-768)}
+    .middle{font-size: var(--font-size-768)}
+    .field{font-size: var(--font-size-768)}
+    .top{height: 70px;}
 }
 
 @media (max-width:690px) {
-    .subcontainer{margin-top: 120px;}
-    .top_1{height: 80px;font-size: 30px;}
-    .top_2{height: 40px;font-size: 14px;}
+    .subcontainer{margin-top: 170px;}
+    
+    .top_1{height: 50px;font-size: var(--font-size-690)}
+    .top_2{height: 20px;font-size: var(--font-size-690)}
+    .top{height: 70px;}
+    button {width: 130px;width: 90%;font-size: var(--font-size-690)}
+    button:hover {font-size: var(--font-size-690)}
+    .bottom button {width: 130px;font-size: var(--font-size-690)}
+    .middle{font-size: var(--font-size-690)}
+    .field{font-size: var(--font-size-690)}
 }
 
 @media (max-width:500px) {
-    .subcontainer{margin-top: 120px;}
-    .top_1{height: 50px;font-size: 20px;}
-    .top_2{height: 20px;font-size: 13px;}
+    .subcontainer{margin-top: 170px;}
+    .top_1{height: 50px;font-size: var(--font-size-490)}
+    .top_2{height: 20px;font-size: var(--font-size-490)}
+    button {width: 130px;font-size: var(--font-size-490)}
+    button:hover {font-size: var(--font-size-490)}
+    .bottom button {width: 130px;font-size: var(--font-size-490)}
+    .middle{font-size: var(--font-size-490)}
+    .field{font-size: var(--font-size-490)}
 }
 
 @media (max-width:410px) {
-
+    .top_1{height: 50px;font-size: var(--font-size-390)}
+    .top_2{height: 20px;font-size: var(--font-size-390)}
+    button {width: 90%;font-size: var(--font-size-390)}
+    button:hover {width: 120px;font-size: var(--font-size-390)}
+    .bottom button {width: 120px;font-size: var(--font-size-390)}
+    .middle{font-size: var(--font-size-390)}
+    .field{font-size: var(--font-size-390)}
 }
 
 
 @media (max-width:366px) {
 
+    .top_1{height: 50px;font-size: var(--font-size-390)}
+    .top_2{height: 20px;font-size: var(--font-size-390)}
+    .middle{font-size: var(--font-size-390)}
 }
 
 @media (max-width:344px) {
+    .top_1{height: 50px;font-size: var(--font-size-390)}
+    .top_2{height: 20px;font-size: var(--font-size-390)}
 }

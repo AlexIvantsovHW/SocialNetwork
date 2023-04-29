@@ -26,26 +26,26 @@ span:hover{background-color: rgba(128, 128, 128, 0); transition: 500ms;border: n
   height: fit-content;
 }
 @media (max-width:768px){
-  .container{font-size: 16px;}
+  .container{font-size: var(--font-size-490);}
 }
 
 @media (max-width:690px) {
-  .container{font-size: 12px;}
+  .container{font-size: var(--font-size-690);}
 }
 
 @media (max-width:500px) {
-  .container{font-size: 10px;}
+  .container{font-size: var(--font-size-490);}
 }
 
 @media (max-width:410px) {
-  .container{font-size: 9px;}
+  .container{font-size:var(--font-size-390);}
 }
 
 
 @media (max-width:366px) {
-  .container{font-size: 8px;}
+  .container{font-size: 9px;}
 }
 
 @media (max-width:344px) {
-  .container{font-size: 7px;}
+  .container{font-size: 9px;}
 }

@@ -1,8 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { NavLink } from "react-router-dom"
 import s from "./../Nav/Nav.module.css";
 import { Link } from "react-router-dom";
-import { PersonaId } from "../Header/Header";
 import { picture } from "../Common/Pictures/Pictures";
 import { Language } from "../Common/Language/Language";
 
@@ -45,12 +44,12 @@ const Nav =(props)=>{
               <div className={s.rColumn}><p>{currentLanguage.navbar.News}</p></div>
             </div>
         </Link>
-        <Link to="/music">
+    {/*      <Link to="/music">
         <div className={s.column}>
               <div className={s.lColumn}> <img src={picture.light.music} /></div>
               <div className={s.rColumn}><p>{currentLanguage.navbar.Music}</p></div>
             </div>
-        </Link>
+        </Link> */}
         
         <div className={s.column}>
         <div className={s.lColumn}> <img src={picture.Flag.Eng} /></div>

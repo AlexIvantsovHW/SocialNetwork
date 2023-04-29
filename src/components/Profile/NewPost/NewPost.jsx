@@ -21,7 +21,7 @@ const PostForm = (props) => {
           validate={[required]}
         />
       </div>
-      <div>
+      <div className={s.button}>
         <button>{currentLanguage.addPost}</button>
       </div>
     </form>

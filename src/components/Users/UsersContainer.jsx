@@ -64,6 +64,6 @@ let mapToStateProps = (state) => {
 export default compose(
   
   connect(mapToStateProps,{unfollowAccept,followAccept,getUsersTC,onPostChangeTC,followTC,unfollowTC }),
-  withAuthNavigate
+ /*  withAuthNavigate */
 )
 (UsersAPIcomponent)

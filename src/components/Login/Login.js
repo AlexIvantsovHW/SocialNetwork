@@ -22,14 +22,14 @@ const LoginForm = (props) => {
   return (
     <div className={s.middle}>
       <form onSubmit={props.handleSubmit}>
-        <div>
-          <Field placeholder={currentLanguage.formData.email} component={Input} name={"email"} validate={Conditions} />
+        <div className={s.field}>
+          <Field className={s.field} placeholder={currentLanguage.formData.email} component={Input} name={"email"} validate={Conditions} />
         </div>
         <div>
-          <Field placeholder={currentLanguage.formData.password} component={Input} name={"password"} validate={Conditions} />
+          <Field className={s.field} placeholder={currentLanguage.formData.password} component={Input} name={"password"} validate={Conditions} />
         </div>
         <div>
-          <Field component={"input"} type="checkbox" name={"rememberMe"} />
+          <Field className={s.field} component={"input"} type="checkbox" name={"rememberMe"} />
           {currentLanguage.formData.RememberMe}
         </div>
         <div>
@@ -56,7 +56,7 @@ const Login = (props) => {
         </div>
         <LoginReduxForm onSubmit={onSubmit}/>
         <div className={s.bottom}>
-  <button ><a href={'https://social-network.samuraijs.com/signUp'}>{currentLanguage.createAccount}</a></button>
+  <button className={s.bottom}><a href={'https://social-network.samuraijs.com/signUp'}>{currentLanguage.createAccount}</a></button>
       </div>
       </div>
   

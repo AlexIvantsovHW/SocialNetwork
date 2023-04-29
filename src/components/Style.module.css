@@ -28,3 +28,12 @@ button:hover{
     color: rgba(0, 255, 34);
     transition: 400ms;
 }
+
+:root {
+    --font-size-890: 12px;
+    --font-size-768: 12px;
+    --font-size-690: 11px;
+    --font-size-490: 11px;
+    --font-size-390: 9px;
+    
+  }

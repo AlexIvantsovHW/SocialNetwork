@@ -52,7 +52,7 @@ nav img{
 
 }
 @media (max-width:890px){
-  .nav p{ font-size:12px;}  
+  .nav p{ font-size: var(--font-size-890);}  
 }
 
 @media (max-width:768px){
@@ -70,12 +70,12 @@ nav img{
 }
 
 @media (max-width:690px){
-  .nav p{font-size: 13px;}
+  .nav p{font-size:var(--font-size-690);}
   nav img{height: 18px;width: 18px;}
 }
 
 @media (max-width:490px){
-  .nav p{font-size: 11px;}
+  .nav p{font-size: var(--font-size-490)}
   nav img{height: 15px;width: 15px;}
   .nav{
     grid-template-columns: repeat(3, 1fr);
@@ -84,7 +84,7 @@ nav img{
 }
 
 @media (max-width:390px){
-  .nav p{font-size: 9px;}
+  .nav p{font-size: var(--font-size-390)}
   nav img{height: 14px;width: 14px;}
   .nav{
     grid-template-columns: repeat(3, 1fr);

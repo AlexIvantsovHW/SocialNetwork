@@ -32,13 +32,11 @@ class App extends React.Component {
         <HeaderContainer />
         <NavСontainer />
         <div className="app-wrapper-content">
-          {/* <div className='main_phone'>Hey</div> */}
           <Routes>
             <Route path="/profile/:id" element={<ProfileContainer />} />
             <Route exact path="/dialog" element={<MessageContainer />} />
             <Route path="/users" element={<UsersContainer />} />
-            <Route path="/music" element={<SongContainer />} />
-            {/* <Route path="/music" element={<MusicContainer />} /> */}
+          {/*    <Route path="/music" element={<SongContainer />} />  */}
             <Route path="/news" element={<NewsContainer />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signIn" element={<SignInContainer />} />

@@ -15,7 +15,8 @@ let initialState = {
 };
 
 const musicReducer = (state = initialState, action) => {
-  switch (action.type) {case SET_TRACK:return { ...state, ...action.data };
+  switch (action.type)
+   {case SET_TRACK: return { ...state, ...action.data };
   default:return { ...state };
   }
   }

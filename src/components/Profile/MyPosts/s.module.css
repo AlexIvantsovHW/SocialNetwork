@@ -24,3 +24,19 @@ flex-direction: column;
     border-radius: 20px;
     padding-left: 2%;
 }
+
+  @media (max-width:690px){
+    .postContainer{font-size: var(--font-size-690)}
+    .userImg{font-size: var(--font-size-690)}
+  }
+  
+  @media (max-width:490px){
+    .postContainer{font-size: var(--font-size-490)}
+    .userImg{font-size: var(--font-size-490)}
+ 
+  }
+  
+  @media (max-width:390px){
+    .postContainer{font-size:var(--font-size-390)}
+    .userImg{font-size: var(--font-size-390)}
+    }

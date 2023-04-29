@@ -1,29 +1,38 @@
 import axios from "axios";
 import React from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
+import { setMusic } from "../../redux/music-reducer";
 
-class SongContainer extends React.Component{
-componentDidMount(){
+
+
+class SongContainer extends React.Component {
+  componentDidMount() {
     debugger;
-    axios.get('https://go-apod.herokuapp.com/apod').then((response)=>{return this.props.imgAC(response.data)})
+axios.get('https://api.deezer.com/user/2529/playlists')
+.then((response)=>{debugger;return response.data});
+      
+  }
+
+  render() {
+    return (
+      <>
+        <Song {...this.props} />
+      </>
+    );
+  }
 }
 
-    render(){
-        return(
-<div>
-            hey
+const Song=(props)=>{
+    return(
+        <div>
+            <div>
+                hey
+            </div>
         </div>
-
-        )
-        
-
-    }
+    )
 }
 
-
-let mapStateToProps=(state)=>{
-    return{
-
-    }
-}
-export default connect(mapStateToProps,{})(SongContainer)
+let mapStateToProps = (state) => {
+  return {};
+};
+export default connect(mapStateToProps, {setMusic})(SongContainer);
